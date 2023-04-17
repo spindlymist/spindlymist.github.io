@@ -28,8 +28,13 @@ const observer = new IntersectionObserver(
 );
 observer.observe(nav);
 
+nav.addEventListener("click", function() {
+    nav.classList.remove("is-open");
+});
+
 const nav_toggle = nav.querySelector(".nav__toggle");
-nav_toggle.addEventListener("click", function() {
+nav_toggle.addEventListener("click", function(e) {
+    e.stopPropagation();
     nav.classList.toggle("is-open");
 });
 
@@ -90,7 +95,10 @@ function refresh_tagline() {
 const theme_toggle = document.querySelector("#theme-toggle");
 const theme_icon = theme_toggle.querySelector("i");
 update_theme_toggle();
-theme_toggle.addEventListener("click", toggle_theme);
+theme_toggle.addEventListener("click", function(e) {
+    e.stopPropagation();
+    toggle_theme();
+});
 theme_toggle.classList.add("is-ready");
 
 function update_theme_toggle() {
