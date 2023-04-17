@@ -1,0 +1,94 @@
+.gallery {
+    --aspect-ratio: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: var(--space-regular);
+}
+
+a.gallery__item {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius-regular);
+    background-color: var(--background-inlay);
+    background-size: cover;
+    background-position: center;
+    transition:
+        box-shadow var(--transition-fast),
+        transform var(--transition-fast);
+    transform: translate3d(0, 0, 0);
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: calc(1 / var(--aspect-ratio) * 100%);
+        position: static;
+    }
+    &:hover::before {
+        background: transparent;
+    }
+
+    & > :first-child {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    &:hover {
+        transform: translate3d(0, calc(-1 * var(--space-x-small)), 0);
+        box-shadow: var(--shadow-hard);
+    }
+}
+
+.gallery__item-caption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+        opacity: 0;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: var(--color-secondary);
+        background-image: url('images/dots.png');
+        background-repeat: repeat;
+        opacity: .3333;
+    }
+
+    p {
+        padding: 3px;
+        margin: 0 var(--space-small);
+        border-radius: var(--border-radius-tight);
+        background-color: rgba(var(--background-main-rgb), .9);
+        color: var(--color-interactive);
+        backdrop-filter: blur(8px);
+        transition: transform var(--transition-fast);
+        text-align: center;
+    }
+    &:hover p {
+        transform: translateY(var(--space-regular));
+    }
+}
+
+@media (max-width: 70rem) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 40rem) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

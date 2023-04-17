@@ -1,0 +1,22 @@
+.project-links a {
+    margin-right: var(--space-regular);
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+
+    &.is-disabled {
+        cursor: help;
+
+        .project-links__label {
+            color: var(--text-regular);
+            opacity: .5;
+            text-decoration: line-through;
+        }
+    }
+
+    .project-links__info {
+        color: var(--text-regular);
+        opacity: .5;
+    }
+}

@@ -1,0 +1,66 @@
+{% import "macros.html" as macros %}
+{% extends "base.html" %}
+
+{% block title %}
+{{ page.title }} | Robin O&apos;Connell
+{% endblock title %}
+
+
+{% block content %}
+<section id="{{ page.title | slugify }}">
+    <h2 data-on-scroll="show">{{ page.title }}</h2>
+
+    {{ macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) }}
+
+    {{ page.content | safe }}
+
+    <h3>Tools &amp; Technologies</h3>
+
+    <div class="cat-list">
+
+        {% for group in page.extra.tech_groups %}
+        <div class="cat-list__category">
+
+            {% if group.name | length > 0 %}
+            <h4>{{ group.name }}</h4>
+            {% endif %}
+
+            <ul>
+                {% for tech in group.techs %}
+                <li>{{ tech }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+
+    </div>
+
+    <h3>Screenshots</h3>
+    {% if page.extra.screenshot_aspect_ratio %}
+        {% set extra_style = "--aspect-ratio:" ~ page.extra.screenshot_aspect_ratio %}
+        {% if page.extra.screenshot_aspect_ratio > 1 %}
+            {% set thumb_width = (512 * page.extra.screenshot_aspect_ratio) | round | int %}
+            {% set thumb_height = 512 %}
+        {% else %}
+            {% set thumb_width = 512 %}
+            {% set thumb_height = (512 / page.extra.screenshot_aspect_ratio) | round | int %}
+        {% endif %}
+    {% else %}
+        {% set thumb_width = 512 %}
+        {% set thumb_height = 512 %}
+    {% endif %}
+    <div class="gallery" {% if extra_style %} style="{{ extra_style }}" {% endif %}>
+        {% for screenshot in page.extra.screenshots %}
+            {% set thumbnail = resize_image(path=page.path ~ screenshot.file, width=thumb_width, height=thumb_height, format="webp", op="fill") %}
+            <a class="gallery__item lightbox" href="{{ screenshot.file }}" data-caption="{{ screenshot.caption }}">
+                <img src="{{ thumbnail.url }}" alt="{{ screenshot.alt }}">
+            </a>
+        {% endfor %}
+    </div>
+</section>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+{% endblock content %}

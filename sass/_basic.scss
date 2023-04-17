@@ -1,0 +1,12 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+img, picture, video, canvas, svg, iframe {
+    display: block;
+    max-width: 100%;
+}

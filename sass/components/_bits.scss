@@ -1,0 +1,18 @@
+.bit {
+    background-color: var(--background-inlay);
+    display: flex;
+    padding: var(--space-regular);
+    margin-bottom: var(--space-regular);
+    border-radius: var(--border-radius-regular);
+    column-gap: var(--space-regular);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.bit-preview {
+    flex: 0 0 25%;
+    padding-top: 25%;
+    border-radius: var(--border-radius-tight);
+    background-color: white; // temporary
+}

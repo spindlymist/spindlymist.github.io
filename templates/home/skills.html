@@ -1,0 +1,40 @@
+{% set skills = get_section(path="skills/_index.md") %}
+
+{{ skills.content | safe }}
+
+<div class="topic-group">
+{% for skill in skills.pages %}
+
+{% if skill.extra.groups | length > 1 %}
+    {% set class = "topic-group__topic full" %}
+{% else %}
+    {% set class = "topic-group__topic" %}
+{% endif %}
+
+<div class="{{ class }}">
+    <h3><i class="{{ skill.extra.icon }}"></i> {{ skill.title }}</h3>
+    
+    {{ skill.content | safe }}
+
+    <div class="cat-list">
+
+        {% for group in skill.extra.groups %}
+        <div class="cat-list__category">
+
+            {% if group.name | length > 0 %}
+            <h4>{{ group.name }}</h4>
+            {% endif %}
+
+            <ul>
+                {% for skill in group.skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endfor %}
+</div>

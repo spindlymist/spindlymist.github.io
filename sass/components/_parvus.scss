@@ -1,0 +1,18 @@
+:root {
+    --parvus-overlay-color: var(--background-inlay);
+    --parvus-overlay-text: var(--text-on-main);
+    --parvus-button-color: var(--color-primary);
+    --parvus-button-text: var(--text-on-primary);
+    --parvus-button-hover-color: var(--color-primary);
+    --parvus-button-hover-text: var(--text-on-primary);
+    --parvus-loader-background-color: var(--background-main);
+    --parvus-loader-color: #2d3249;
+}
+
+.parvus__caption p {
+    max-width: 40rem;
+}
+
+.parvus-zoom__indicator {
+    display: none;
+}

@@ -1,0 +1,25 @@
+.cat-list {
+    display: flex;
+    column-gap: var(--space-regular);
+    row-gap: var(--space-regular);
+    flex-wrap: wrap;
+    margin: var(--space-regular) 0;
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.cat-list__category {
+    flex: 1 1 16rem;
+    padding: var(--space-regular);
+    background-color: var(--background-inlay);
+    border-radius: var(--border-radius-regular);
+
+    h4 {
+        font-size: inherit;
+    }
+}

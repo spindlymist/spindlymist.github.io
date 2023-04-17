@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="{{ get_url(path="js/darkmode.js") }}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}{% endblock title %}</title>
+
+    <script src="{{ get_url(path='lib/parvus.min.js') }}"></script>
+    <link href="{{ get_url(path='lib/parvus.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button class="nav__toggle"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/#top">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#!"><i class="far fa-file-alt"></i> resume</a>
+                    <a href="#!"><i class="far fa-envelope"></i> contact</a>
+                    <button id="theme-toggle"><i class="fas fa-sun"></i></button>
+                </div>
+            </div>
+        </nav>
+
+        {% block content %}{% endblock content %}
+    </main>
+    <script src="{{ get_url(path='js/ui.js') }}" type="module"></script>
+    <script src="{{ get_url(path='js/background.js') }}"></script>
+</body>
+</html>

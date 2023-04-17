@@ -1,0 +1,14 @@
+#theme-toggle {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity var(--transition-very-fast);
+    align-self: center;
+
+    &.is-ready {
+        opacity: 1;
+    }
+}
