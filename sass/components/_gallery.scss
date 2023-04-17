@@ -73,7 +73,10 @@ a.gallery__item {
         background-color: rgba(var(--background-main-rgb), .9);
         color: var(--color-interactive);
         backdrop-filter: blur(8px);
-        transition: transform var(--transition-fast);
+        transition:
+            transform var(--transition-fast),
+            background-color var(--transition-fast),
+            color var(--transition-fast);
         text-align: center;
     }
     &:hover p {

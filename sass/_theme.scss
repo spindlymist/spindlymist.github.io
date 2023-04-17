@@ -52,6 +52,13 @@ canvas {
 body {
     background-color: var(--background-page);
     color: var(--text-on-main);
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+div, section, header, nav {
+    transition: background-color var(--transition-fast);
 }
 
 header {
@@ -60,10 +67,12 @@ header {
 
 nav {
     background-color: rgba(var(--background-main-rgb), 0);
+    border-bottom: 2px solid transparent;
     user-select: none;
     transition:
         background-color var(--transition-fast),
-        box-shadow var(--transition-fast);
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
 
     .nav__toggle {
         margin: 0;
