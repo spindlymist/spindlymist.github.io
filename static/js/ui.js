@@ -31,6 +31,11 @@ observer.observe(nav);
 nav.addEventListener("click", function() {
     nav.classList.remove("is-open");
 });
+window.addEventListener("resize", function() {
+    if (window.innerWidth > 720) {
+        nav.classList.remove("is-open");
+    }
+});
 
 const nav_toggle = nav.querySelector(".nav__toggle");
 nav_toggle.addEventListener("click", function(e) {

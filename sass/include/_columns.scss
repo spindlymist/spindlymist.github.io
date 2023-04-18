@@ -1,0 +1,39 @@
+@function column-width($parent-cols) {
+    $column-width: 100% / $parent-cols;
+
+    @return $column-width;
+}
+
+@mixin column-span-w($cols, $parent-cols) {
+    width: $cols * column-width($parent-cols);
+}
+
+@mixin column-span-m($cols, $parent-cols, $align: center) {
+    $space: ($parent-cols - $cols) * column-width($parent-cols);
+
+    @if $align == left {
+        margin-right: $space;
+    }
+    @else if $align == center {
+        margin-left: $space / 2;
+        margin-right: $space / 2;
+    }
+    @else if $align == right {
+        margin-left: $space;
+    }
+}
+
+@mixin column-span-p($cols, $parent-cols, $align: center) {
+    $space: ($parent-cols - $cols) * column-width($parent-cols);
+
+    @if $align == left {
+        padding-right: $space;
+    }
+    @else if $align == center {
+        padding-left: $space / 2;
+        padding-right: $space / 2;
+    }
+    @else if $align == right {
+        padding-left: $space;
+    }
+}

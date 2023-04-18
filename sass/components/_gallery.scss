@@ -1,8 +1,23 @@
 .gallery {
     --aspect-ratio: 1;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
     grid-gap: var(--space-regular);
+
+    @include breakpoint("xx-large") {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    @include breakpoint("x-large") {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    @include breakpoint("large") {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    @include breakpoint("small") {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @include breakpoint("xx-small") {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 a.gallery__item {
@@ -81,17 +96,5 @@ a.gallery__item {
     }
     &:hover p {
         transform: translateY(var(--space-regular));
-    }
-}
-
-@media (max-width: 70rem) {
-    .gallery {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 40rem) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
     }
 }

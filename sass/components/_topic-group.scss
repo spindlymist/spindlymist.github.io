@@ -10,24 +10,20 @@
     &:last-child {
         margin-bottom: 0;
     }
-
-    .topic-group__topic {
-        &.full {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
-    }
 }
 
-@media (max-width: 70rem) {
+.topic-group__topic.full {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+@include breakpoint("x-small") {
     .topic-group {
         grid-template-columns: 1fr;
     }
 
     .topic-group__topic.full {
-        &.full {
-            grid-column-start: unset;
-            grid-column-end: unset;
-        }
+        grid-column-start: unset;
+        grid-column-end: unset;
     }
 }

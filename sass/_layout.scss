@@ -1,43 +1,7 @@
-@function column-width($parent-cols) {
-    $column-width: 100% / $parent-cols;
-
-    @return $column-width;
-}
-@mixin column-span-w($cols, $parent-cols) {
-    width: $cols * column-width($parent-cols);
-}
-@mixin column-span-m($cols, $parent-cols, $align: center) {
-    $space: ($parent-cols - $cols) * column-width($parent-cols);
-
-    @if $align == left {
-        margin-right: $space;
-    }
-    @else if $align == center {
-        margin-left: $space / 2;
-        margin-right: $space / 2;
-    }
-    @else if $align == right {
-        margin-left: $space;
-    }
-}
-@mixin column-span-p($cols, $parent-cols, $align: center) {
-    $space: ($parent-cols - $cols) * column-width($parent-cols);
-
-    @if $align == left {
-        padding-right: $space;
-    }
-    @else if $align == center {
-        padding-left: $space / 2;
-        padding-right: $space / 2;
-    }
-    @else if $align == right {
-        padding-left: $space;
-    }
-}
-
 $page-columns: 12;
 $main-columns: 8;
 $content-columns: 6;
+$gutter-columns: ($main-columns - $content-columns) / 2;
 
 :root {
     --space-x-small: 0.25rem;
@@ -45,10 +9,8 @@ $content-columns: 6;
     --space-regular: 1rem;
     --space-large: 2rem;
     --space-x-large: 4rem;
-}
 
-@media (max-width: 70rem) {
-    :root {
+    @include breakpoint("medium") {
         --space-x-small: 0.25rem;
         --space-small: 0.3333rem;
         --space-regular: 0.6667rem;
@@ -114,10 +76,10 @@ header, section {
     }
 
     h2 {
-        margin-left: column-width($content-columns) * -1;
+        margin-left: column-width($content-columns) * $gutter-columns * -1;
         margin-top: 0;
         margin-bottom: column-width($content-columns) * 0.25;
-        padding-left: column-width($content-columns);
+        padding-left: column-width($content-columns) * $gutter-columns;
         padding-right: var(--space-large);
         padding-top: var(--space-small);
         padding-bottom: var(--space-small);
@@ -136,9 +98,10 @@ section:last-of-type {
     border-bottom-right-radius: 0;
 }
 
-@media (max-width: 70rem) {
-    $main-columns: $page-columns - 1;
-    $content-columns: $page-columns - 1.5;
+@include breakpoint("medium") {
+    $main-columns: 10;
+    $content-columns: 8;
+    $gutter-columns: ($main-columns - $content-columns) / 2;
 
     main {
         @include column-span-w($main-columns, $page-columns);
@@ -149,12 +112,12 @@ section:last-of-type {
     }
 
     nav {
-        @include column-span-p($content-columns, $page-columns);
+        @include column-span-p($content-columns, $main-columns);
         overflow: hidden;
     }
 
     header, section {
-        @include column-span-p($content-columns, $page-columns);
+        @include column-span-p($content-columns, $main-columns);
         padding-top: column-width($main-columns) / 2;
         padding-bottom: column-width($main-columns) / 2;
         margin-bottom: column-width($main-columns) / 2;
@@ -164,12 +127,46 @@ section:last-of-type {
     }
     section h2 {
         margin-bottom: column-width($content-columns) * 0.25;
-        margin-left: column-width($content-columns) * -0.75;
-        padding-left: column-width($content-columns) * 0.75;
+        margin-left: column-width($content-columns) * $gutter-columns * -1;
+        padding-left: column-width($content-columns) * $gutter-columns;
     }
 }
 
-@media (max-width: 40rem) {
+@include breakpoint("small") {
+    $main-columns: 11;
+    $content-columns: 10;
+    $gutter-columns: ($main-columns - $content-columns) / 2;
+
+    main {
+        @include column-span-w($main-columns, $page-columns);
+
+        &::after {
+            content: none;
+        }
+    }
+
+    nav {
+        @include column-span-p($content-columns, $main-columns);
+        overflow: hidden;
+    }
+
+    header, section {
+        @include column-span-p($content-columns, $main-columns);
+        padding-top: column-width($main-columns) / 2;
+        padding-bottom: column-width($main-columns) / 2;
+        margin-bottom: column-width($main-columns) / 2;
+    }
+    header {
+        margin-bottom: 0;
+    }
+    section h2 {
+        margin-bottom: column-width($content-columns) * 0.25;
+        margin-left: column-width($content-columns) * $gutter-columns * -1;
+        padding-left: column-width($content-columns) * $gutter-columns;
+    }
+}
+
+@include breakpoint("x-small") {
     main {
         width: auto;
         margin: 0 var(--space-regular);

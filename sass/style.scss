@@ -1,7 +1,11 @@
+@import 'include/breakpoints';
+@import 'include/columns';
+
 @import 'basic';
 @import 'typography';
 @import 'theme';
 @import 'layout';
+
 @import 'components/background';
 @import 'components/bits';
 @import 'components/cat-list';

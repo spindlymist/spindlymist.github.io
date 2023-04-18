@@ -5,16 +5,18 @@
     --font-regular: 1.1rem;
     --font-small: 0.9rem;
     --font-x-small: 0.7rem;
-}
 
-@media (max-width: 70rem) {
-    :root {
+    @include breakpoint("small") {
         --font-x-large: 2rem;
         --font-large: 1.25rem;
         --font-medium: 1.15rem;
         --font-regular: 1.0rem;
         --font-small: 0.9rem;
         --font-x-small: 0.7rem;
+    }
+
+    @include breakpoint("x-small") {
+        --font-x-large: 1.5rem;
     }
 }
 
@@ -46,8 +48,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: var(--font-x-large);
 }
-.nav__mobile h1 {
-    font-size: var(--font-regular);
+.nav__mobile {
+    font-size: var(--font-large);
+
+    h1 {
+        font-size: inherit;
+    }
 }
 
 h2 {
