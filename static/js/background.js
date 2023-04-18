@@ -35,6 +35,7 @@ function draw() {
     draw_circles(canvas, ctx);
 }
 window.addEventListener('scroll', draw);
+window.Theme.add_listener(draw);
 
 function resize() {
     canvas.width = window.innerWidth;
@@ -112,7 +113,12 @@ function draw_grid(canvas, ctx) {
     let offset = (window.scrollY * 0.25) % grid_size;
 
     ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(0, 0, 0, .10)';
+    if (window.Theme.current === window.Theme.DARK) {
+        ctx.strokeStyle = 'rgba(255, 255, 255, .10)';
+    }
+    else {
+        ctx.strokeStyle = 'rgba(0, 0, 0, .10)';
+    }
 
     ctx.beginPath();
     for(let x = -0.5; x < 12; x++) {
@@ -177,7 +183,7 @@ function* halton_sequence(base) {
             d *= base;
         }
         else {
-            y = Math.floor(d / base);
+            let y = Math.floor(d / base);
             while (x <= y) {
                 y = Math.floor(y / base);
             }

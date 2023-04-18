@@ -1,4 +1,4 @@
-:root, :root.force-light {
+:root, :root.force-light-theme {
     --background-page: #f0f0f0;
     --background-main: white;
     --background-main-rgb: 255, 255, 255;
@@ -31,7 +31,7 @@
     }
 }
 
-:root.force-dark {
+:root.force-dark-theme {
     --background-page: #222;
     --background-main: #333;
     --background-main-rgb: 51, 51, 51;

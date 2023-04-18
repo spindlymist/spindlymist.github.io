@@ -94,16 +94,17 @@ function refresh_tagline() {
 
 const theme_toggle = document.querySelector("#theme-toggle");
 const theme_icon = theme_toggle.querySelector("i");
+
 update_theme_toggle();
 theme_toggle.addEventListener("click", function(e) {
     e.stopPropagation();
-    toggle_theme();
+    window.Theme.toggle();
+    update_theme_toggle();
 });
 theme_toggle.classList.add("is-ready");
 
 function update_theme_toggle() {
-    const is_dark_theme = window.theme === "dark";
-
+    const is_dark_theme = window.Theme.current === window.Theme.DARK;
     theme_icon.classList.toggle("fa-sun", !is_dark_theme);
     theme_icon.classList.toggle("fa-moon", is_dark_theme);
 
@@ -113,21 +114,4 @@ function update_theme_toggle() {
     else {
         theme_toggle.title = "Switch to dark theme";
     }
-}
-
-function toggle_theme() {
-    const is_dark_theme = window.theme === "dark";
-
-    if(is_dark_theme) {
-        window.theme = "light";
-    }
-    else {
-        window.theme = "dark";
-    }
-    localStorage.setItem("theme", window.theme);
-
-    document.documentElement.classList.toggle("force-light", is_dark_theme);
-    document.documentElement.classList.toggle("force-dark", !is_dark_theme);
-
-    update_theme_toggle();
 }
