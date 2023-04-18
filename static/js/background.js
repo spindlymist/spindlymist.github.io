@@ -38,8 +38,8 @@ window.addEventListener('scroll', draw);
 window.Theme.add_listener(draw);
 
 function resize() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
     draw();
 }
 window.addEventListener('resize', resize);
@@ -109,8 +109,8 @@ function make_color_picker(colors) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function draw_grid(canvas, ctx) {
-    let grid_size = Math.round(canvas.width / 12);
-    let offset = (window.scrollY * 0.25) % grid_size;
+    const grid_size = canvas.width / 12;
+    const offset = Math.round((window.scrollY * 0.25) % grid_size);
 
     ctx.lineWidth = 1;
     if (window.Theme.current === window.Theme.DARK) {
@@ -122,12 +122,15 @@ function draw_grid(canvas, ctx) {
 
     ctx.beginPath();
     for(let x = -0.5; x < 12; x++) {
-        ctx.moveTo(x * grid_size, 0);
-        ctx.lineTo(x * grid_size, canvas.height);
+        let x_canvas = Math.round(x * grid_size) + 0.5;
+        console.log(x_canvas);
+        ctx.moveTo(x_canvas, 0);
+        ctx.lineTo(x_canvas, canvas.height);
     }
     for(let y = -0.5; y < window.innerHeight / grid_size; y++) {
-        ctx.moveTo(0, y * grid_size - offset);
-        ctx.lineTo(canvas.width, y * grid_size - offset);
+        let y_canvas = Math.round(y * grid_size) - offset + 0.5;
+        ctx.moveTo(0, y_canvas);
+        ctx.lineTo(canvas.width, y_canvas);
     }
     ctx.stroke();
 }
