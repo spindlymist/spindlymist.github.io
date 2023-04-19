@@ -1,36 +1,36 @@
-{% set section = get_section(path="projects/_index.md") %}
-{% set projects = section.pages %}
+{%- set section = get_section(path="projects/_index.md") -%}
+{%- set projects = section.pages -%}
 
-{% for section_path in section.subsections %}
-    {% set section = get_section(path=section_path) %}
-    {% set_global projects = projects | concat(with=section) %}
-{% endfor %}
+{%- for section_path in section.subsections -%}
+    {%- set section = get_section(path=section_path) -%}
+    {%- set_global projects = projects | concat(with=section) -%}
+{%- endfor -%}
 
-<div class="gallery with-overlay" style="--aspect-ratio:calc(9 / 16)">
-{% set thumb_width = 512 %}
-{% set thumb_height = 512 * (16/9) | round | int %}
-{% for project in projects %}
-    {% set webp_thumb = get_image_metadata(path=project.path ~ "thumbnail.webp", allow_missing=true) %}
-    {% set png_thumb = get_image_metadata(path=project.path ~ "thumbnail.png", allow_missing=true) %}
+<div class="gallery" style="--aspect-ratio:calc(9 / 16)">
+{%- set thumb_width = 512 -%}
+{%- set thumb_height = 512 * (16/9) | round | int -%}
+{%- for project in projects -%}
+    {%- set webp_thumb = get_image_metadata(path=project.path ~ "thumbnail.webp", allow_missing=true) -%}
+    {%- set png_thumb = get_image_metadata(path=project.path ~ "thumbnail.png", allow_missing=true) -%}
 
-    {% if project.extra.thumbnail %}
-        {% set thumbnail_url = get_url(path=project.path ~ project.extra.thumbnail) %}
-    {% elif webp_thumb.format %}
-        {% set thumbnail_url = get_url(path=project.path ~ "thumbnail.webp") %}
-    {% elif png_thumb.format %}
-        {% set thumbnail_url = get_url(path=project.path ~ "thumbnail.png") %}
-    {% elif project.extra.screenshots %}
-        {% set screenshot_path = project.path ~ project.extra.screenshots.0.file %}
-        {% set thumbnail = resize_image(path=screenshot_path, width=thumb_width, height=thumb_height, format="webp", op="fill") %}
-        {% set thumbnail_url = thumbnail.url %}
-    {% endif %}
+    {%- if project.extra.thumbnail -%}
+        {%- set thumbnail_url = get_url(path=project.path ~ project.extra.thumbnail) -%}
+    {%- elif webp_thumb.format -%}
+        {%- set thumbnail_url = get_url(path=project.path ~ "thumbnail.webp") -%}
+    {%- elif png_thumb.format -%}
+        {%- set thumbnail_url = get_url(path=project.path ~ "thumbnail.png") -%}
+    {%- elif project.extra.screenshots -%}
+        {%- set screenshot_path = project.path ~ project.extra.screenshots.0.file -%}
+        {%- set thumbnail = resize_image(path=screenshot_path, width=thumb_width, height=thumb_height, format="webp", op="fill") -%}
+        {%- set thumbnail_url = thumbnail.url -%}
+    {%- endif -%}
 
     <a href="{{ project.permalink | safe }}" class="gallery__item"
-        {% if thumbnail_url %} style="background-image:url('{{ thumbnail_url | safe }}')" {% endif %}
+        {%- if thumbnail_url %} style="background-image:url('{{ thumbnail_url | safe }}')" {%- endif -%}
     >
         <div class="gallery__item-caption">
             <p>{{ project.title }}</p>
         </div>
     </a>
-{% endfor %}
+{%- endfor -%}
 </div>

@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="{{ get_url(path="js/theme.js") }}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>{% block title %}{% endblock title %}</title>
-
+    <script src="{{ get_url(path="js/theme.js") }}"></script>
     <script src="{{ get_url(path='lib/parvus.min.js') }}"></script>
     <link href="{{ get_url(path='lib/parvus.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ get_url(path="style.css") }}">
-    
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
     <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>{% block title %}{% endblock title %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <canvas></canvas>
@@ -29,7 +25,6 @@
                 <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
             </p>
         </header>
-        
         <nav>
             <div class="nav__mobile">
                 <h1>Robin O&apos;Connell</h1>
@@ -50,7 +45,6 @@
                 </div>
             </div>
         </nav>
-
         {% block content %}{% endblock content %}
     </main>
     <script src="{{ get_url(path='js/ui.js') }}" type="module"></script>

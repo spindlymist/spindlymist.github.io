@@ -1,24 +1,20 @@
-{% extends "base.html" %}
+{%- extends "base.html" -%}
 
-{% block title %}
+{%- block title -%}
 Robin O&apos;Connell
-{% endblock title %}
+{%- endblock title -%}
 
-{% block content %}
-
+{%- block content -%}
 <section id="projects">
     <h2 data-on-scroll="show">Projects</h2>
-    {% include "home/projects.html" %}
+    {%- include "home/projects.html" -%}
 </section>
-
 <section id="skills">
     <h2 data-on-scroll="show">Skills</h2>
-    {% include "home/skills.html" %}
+    {%- include "home/skills.html" -%}
 </section>
-
 <section id="about">
     <h2 data-on-scroll="show">About Me</h2>
-    {% include "home/about.html" %}
+    {%- include "home/about.html" -%}
 </section>
-
-{% endblock content %}
+{%- endblock content -%}

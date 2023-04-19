@@ -1,29 +1,23 @@
-{% import "macros.html" as macros %}
-{% extends "base.html" %}
+{%- import "macros.html" as macros -%}
+{%- extends "base.html" -%}
 
-{% block title %}
+{%- block title -%}
 {{ section.title }} | Robin O&apos;Connell
-{% endblock title %}
+{%- endblock title -%}
 
-
-{% block content %}
+{%- block content -%}
 <section id="{{ section.title | slugify }}">
     <h2 data-on-scroll="show">{{ section.title }}</h2>
-
-    {{ section.content | safe }}
-
-    {% for page in section.pages %}
+    {{- section.content | safe -}}
+    {%- for page in section.pages -%}
     <div class="bit">
         <div class="bit-preview"></div>
         <div>
             <h3>{{ page.title }}</h3>
-            
-            {{ macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) }}
-
-            {{ page.content | safe }}
+            {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
+            {{- page.content | safe -}}
         </div>
     </div>
-    {% endfor %}
-
+    {%- endfor -%}
 </section>
-{% endblock content %}
+{%- endblock content -%}
