@@ -47,6 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
     font-size: var(--font-x-large);
+    line-height: 1;
 }
 .nav__mobile {
     font-size: var(--font-large);
@@ -78,4 +79,10 @@ a:link, a:visited, a:active {
 
 input, button, textarea, select {
     font: inherit;
+}
+
+@include breakpoint("x-small") {
+    .nav__links {
+        font-size: var(--font-medium);
+    }
 }

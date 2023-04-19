@@ -88,14 +88,14 @@ nav {
 
     &.is-stuck {
         background-color: rgba(var(--background-main-rgb), .75);
-        backdrop-filter: blur(8px);
+        backdrop-filter: grayscale(1) blur(8px);
         box-shadow: var(--shadow-soft);
         border-bottom: 2px solid var(--background-main);
     }
 
     &.is-open {
         background-color: rgba(var(--background-main-rgb), .9);
-        backdrop-filter: blur(8px);
+        backdrop-filter: grayscale(1) blur(8px);
     }
 }
 
