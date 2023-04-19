@@ -24,6 +24,11 @@ html, body {
     min-height: 100%;
 }
 
+body {
+    --space-before: 0;
+    padding-top: var(--space-before);
+}
+
 main {
     @include column-span-w($main-columns, $page-columns);
 
@@ -47,7 +52,7 @@ nav {
     position: sticky;
     top: -1px;
     @include column-span-p($content-columns, $main-columns);
-    padding-top: calc(1px + var(--space-small));
+    padding-top: var(--space-small);
     padding-bottom: var(--space-small);
     z-index: 100;
 
@@ -183,6 +188,9 @@ section:last-of-type {
         right: 0;
         padding-left: calc(var(--space-regular) + var(--space-large));
         padding-right: calc(var(--space-regular) + var(--space-large));
+        // top and bottom margin are moved onto .nav__mobile for easy height measurement
+        padding-top: 0;
+        padding-bottom: 0;
         margin: 0 calc(-1 * var(--space-regular));
 
         .nav__mobile {
@@ -190,6 +198,8 @@ section:last-of-type {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-top: var(--space-small);
+            padding-bottom: var(--space-small);
 
             h1 {
                 margin-bottom: 0;

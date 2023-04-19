@@ -21,6 +21,9 @@ function show_on_scroll() {
 ////////////////////////////////////////////////////////////////////////////////
 
 const nav = document.querySelector("nav");
+const nav_toggle = nav.querySelector(".nav__toggle");
+const nav_mobile = nav.querySelector(".nav__mobile");
+let is_nav_open = false;
 
 const observer = new IntersectionObserver( 
     ([e]) => e.target.classList.toggle("is-stuck", e.intersectionRatio < 1),
@@ -28,20 +31,39 @@ const observer = new IntersectionObserver(
 );
 observer.observe(nav);
 
-nav.addEventListener("click", function() {
-    nav.classList.remove("is-open");
-});
+nav.addEventListener("click", close_nav);
 window.addEventListener("resize", function() {
-    if (window.innerWidth > 720) {
-        nav.classList.remove("is-open");
+    if (is_nav_open && window.innerWidth > 720) {
+        close_nav();
     }
 });
 
-const nav_toggle = nav.querySelector(".nav__toggle");
 nav_toggle.addEventListener("click", function(e) {
     e.stopPropagation();
-    nav.classList.toggle("is-open");
+    toggle_nav();
 });
+
+function close_nav() {
+    is_nav_open = false;
+    nav.classList.remove("is-open");
+    update_body_spacing();
+}
+
+function toggle_nav() {
+    is_nav_open = !is_nav_open;
+    nav.classList.toggle("is-open", is_nav_open);
+    update_body_spacing();
+}
+
+function update_body_spacing() {
+    if (is_nav_open) {
+        const height = nav_mobile.offsetHeight + 2; // add 2px for border-bottom of nav
+        document.body.style.setProperty("--space-before", `${height}px`);
+    }
+    else {
+        document.body.style.setProperty("--space-before", 0);
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Tagline
