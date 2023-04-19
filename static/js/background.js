@@ -123,7 +123,6 @@ function draw_grid(canvas, ctx) {
     ctx.beginPath();
     for(let x = -0.5; x < 12; x++) {
         let x_canvas = Math.round(x * grid_size) + 0.5;
-        console.log(x_canvas);
         ctx.moveTo(x_canvas, 0);
         ctx.lineTo(x_canvas, canvas.height);
     }
