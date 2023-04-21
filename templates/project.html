@@ -29,6 +29,7 @@
         </div>
         {%- endfor -%}
     </div>
+    {%- if page.extra.screenshots %}
     <h3>Screenshots</h3>
     {%- if page.extra.screenshot_aspect_ratio -%}
         {%- set extra_style = "--aspect-ratio:" ~ page.extra.screenshot_aspect_ratio -%}
@@ -53,6 +54,7 @@
             </a>
         {%- endfor -%}
     </div>
+    {% endif %}
 </section>
 <script>
     new Parvus({
