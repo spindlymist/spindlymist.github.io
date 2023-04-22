@@ -1,18 +1,53 @@
 .bit {
-    background-color: var(--background-inlay);
     display: flex;
-    padding: var(--space-regular);
+    align-items: flex-start;
+    padding: var(--space-large);
     margin-bottom: var(--space-regular);
+    column-gap: var(--space-large);
+    row-gap: var(--space-large);
     border-radius: var(--border-radius-regular);
-    column-gap: var(--space-regular);
+    background-color: var(--background-inlay);
 
     &:last-child {
         margin-bottom: 0;
     }
+
+    @include breakpoint("x-small") {
+        flex-direction: column;
+        align-items: stretch;
+    }
 }
-.bit-preview {
+.bit__thumbnail {
+    position: relative;
     flex: 0 0 25%;
-    padding-top: 25%;
     border-radius: var(--border-radius-tight);
-    background-color: white; // temporary
+    overflow: hidden;
+
+    a {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+
+    @include breakpoint("x-small") {
+        flex: unset;
+
+        &::before {
+            padding-top: 100% / 16 * 9;
+        }
+    }
 }

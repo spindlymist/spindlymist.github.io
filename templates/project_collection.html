@@ -10,14 +10,24 @@
     <h2 data-on-scroll="show">{{ section.title }}</h2>
     {{- section.content | safe -}}
     {%- for page in section.pages -%}
-    <div class="bit">
-        <div class="bit-preview"></div>
-        <div>
-            <h3>{{ page.title }}</h3>
-            {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
-            {{- page.content | safe -}}
+        {%- set thumb_width = 512 -%}
+        {%- set thumb_height = 512 -%}
+        {%  set screenshot = page.extra.screenshots.0 %}
+        {%- set screenshot_path = page.path ~ screenshot.file -%}
+        {%- set thumbnail = resize_image(path=screenshot_path, width=thumb_width, height=thumb_height, format="webp", op="fill") -%}
+        <div class="bit">
+            <div class="bit__thumbnail">
+                <a class="lightbox" href="{{ page.slug }}/{{ screenshot.file }}" data-caption="{{ screenshot.caption }}">
+                    <img src="{{ thumbnail.url }}" alt="{{ screenshot.alt }}">
+                </a>
+            </div>
+            <div>
+                <h3>{{ page.title }}</h3>
+                {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
+                {{- page.content | safe -}}
+            </div>
         </div>
-    </div>
     {%- endfor -%}
 </section>
+<script>new Parvus();</script>
 {%- endblock content -%}
