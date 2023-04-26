@@ -132,31 +132,25 @@ i {
 }
 
 a:link, a:visited {
-    color: var(--text-interactive);
     position: relative;
-    z-index: 0;
-    transition: color var(--transition-very-fast);
-
-    &::before {
-        $inset: -3px;
-
-        content: '';
-        position: absolute;
-        top: $inset;
-        left: $inset;
-        right: $inset;
-        bottom: $inset;
-        transition: background-color var(--transition-very-fast);
-        z-index: -1;
-    }
-    &:hover::before {
-        background: var(--color-secondary);
-    }
+    color: var(--text-interactive);
+    transition:
+        background-color var(--transition-very-fast),
+        color var(--transition-very-fast),
+        box-shadow var(--transition-very-fast);
 
     i {
         transition: color var(--transition-very-fast);
     }
-    &:hover, &:hover i {
+
+    &:hover, &:active {
         color: var(--text-on-secondary);
+        background-color: var(--color-secondary);
+        box-shadow: 0 0 0 2px var(--color-secondary);
+
+        i {
+            color: var(--text-on-secondary);
+        }
     }
+    
 }
