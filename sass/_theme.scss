@@ -134,6 +134,7 @@ i {
 a:link, a:visited {
     position: relative;
     color: var(--text-interactive);
+    box-shadow: 0 0 1px 0 transparent;
     transition:
         background-color var(--transition-very-fast),
         color var(--transition-very-fast),
