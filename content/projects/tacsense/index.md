@@ -14,12 +14,12 @@ caption = "The Products page header. A gentle pulsing animation invites the user
 [[extra.screenshots]]
 file = "product_sensor.png"
 alt = "A winding blue line leads from the top to a render of one of TacSense's pressure sensors, then turns gray and continues off the bottom. Adjacent to the image is the heading \"Sensors\" above a couple of bullet points."
-caption = "My client wanted to emphasize that they offer a complete solution from sensors to software and everything between. I devised an \"animated trail\" that visually connects the dots as the user scrolls, mirroring the flow of data in the product line."
+caption = "As the user explores the TacSense stack, my so-called \"animated trail\" visually connects each layer, tracing the flow of data in the real world."
 
 [[extra.screenshots]]
 file = "product_hardware.png"
 alt = "A winding blue line leads from the top to an intricate vector illustration of a circuit board, then turns gray and continues off the bottom. Adjacent to the circuit is the heading \"Hardware\" above a couple of bullet points."
-caption = "A circuit illustration I designed for the next part of the animated trail."
+caption = "A circuit illustration I created for the next part of the animated trail."
 
 [[extra.screenshots]]
 file = "product_wireless.png"
@@ -29,7 +29,7 @@ caption = "Another illustration I created which lights up as it comes into view.
 [[extra.screenshots]]
 file = "product_software.png"
 alt = "A dashed, winding blue line leads from the top to a vector illustration of a mobile phone displaying an ECG trace, then turns to solid gray and continues off the bottom. Adjacent to the phone is the heading \"Software & AI\" above a single bullet point."
-caption = "The carefully positioned ECG trace appears gradually as the user scrolls."
+caption = "A carefully positioned ECG trace appears gradually as the user visits the next stop on the trail."
 
 [[extra.screenshots]]
 file = "product_end.png"
@@ -64,4 +64,4 @@ techs = [
 
 TacSense designs and manufactures miniaturized high-precision pressure sensors. In 2019, I was contracted to update and redesign parts of their website—primarily the [Products](https://web.archive.org/web/20200422021421/https://tacsense.com/products/) and [Applications](https://web.archive.org/web/20200422022127/https://tacsense.com/applications/) pages. The company has undergone tremendous growth and built a new website in the intervening years, but the work I did is still available via the [Internet Archive's Wayback Machine](https://archive.org/web/). The archived version is slow to load (likely waiting for a response from some service that no longer exists) but otherwise fully functional.
 
-The centerpiece of my contribution was a series of connected, animated figures and illustrations for the Products page. The client wished to emphasize that they were offering a complete solution from physical sensors to data analysis and everything between. I devised an \"animated trail\" (trademark pending—no, not really) that visually connects each layer of the product stack as the user scrolls down the page, mimicking the flow of data through the actual system. There are screenshots below, but I recommend trying it yourself to see it come to life.
+The centerpiece of my contribution was a series of connected, animated figures and illustrations for the Products page. The client wished to emphasize that they were offering a complete solution from physical sensors to data analysis and everything between. I devised an \"animated trail\" (trademark pending—no, not really) that visually connects each layer of the tech stack as the user scrolls down the page, mimicking the flow of data through the actual system. There are screenshots below, but I recommend trying it yourself to see it come to life.
