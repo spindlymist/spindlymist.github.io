@@ -3,7 +3,7 @@ title = "Flooded Graveyard"
 weight = 2000
 
 [extra]
-live_url = "?No build is available at this time."
+live_url = "https://github.com/spindlymist/flooded-graveyard/releases"
 repo_url = "https://github.com/spindlymist/flooded-graveyard"
 
 [[extra.screenshots]]
