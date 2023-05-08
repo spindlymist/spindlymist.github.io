@@ -25,8 +25,16 @@
         {%- set thumbnail_url = thumbnail.url -%}
     {%- endif -%}
 
+    {% set extra_style = "" %}
+    {% if thumbnail_url %}
+        {% set extra_style = extra_style ~ "background-image:url('" ~ thumbnail_url ~ "');" %}
+    {% endif %}
+    {% if project.extra.thumbnail_background_size %}
+        {% set extra_style = extra_style ~ "background-size:" ~ project.extra.thumbnail_background_size ~ ";" %}
+    {% endif %}
+
     <a href="{{ project.permalink | safe }}" class="gallery__item"
-        {%- if thumbnail_url %} style="background-image:url('{{ thumbnail_url | safe }}')" {%- endif -%}
+        {%- if extra_style | length > 0 %} style="{{ extra_style | safe }}" {%- endif -%}
     >
         <div class="gallery__item-caption">
             <p>{{ project.title }}</p>
