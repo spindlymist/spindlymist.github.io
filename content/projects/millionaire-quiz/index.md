@@ -1,5 +1,5 @@
 +++
-title = "Millionaire Game"
+title = "Millionaire Quiz"
 weight = 11000
 
 [extra]
