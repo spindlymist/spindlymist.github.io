@@ -81,6 +81,11 @@ input, button, textarea, select {
     font: inherit;
 }
 
+code {
+    font-family: Consolas, 'Source Code Pro', Hack, monospace;
+    font-weight: 400;
+}
+
 @include breakpoint("x-small") {
     .nav__links {
         font-size: var(--font-medium);
