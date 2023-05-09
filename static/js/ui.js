@@ -133,12 +133,14 @@ theme_toggle.classList.add("is-ready");
 function update_theme_toggle() {
     const is_dark_theme = window.Theme.current === window.Theme.DARK;
     theme_icon.classList.toggle("fa-sun", !is_dark_theme);
-    theme_icon.classList.toggle("fa-moon", is_dark_theme);
+    theme_icon.classList.toggle("fa-moon", is_dark_theme);  
 
     if (is_dark_theme) {
         theme_toggle.title = "Switch to light theme";
+        theme_toggle.ariaLabel = "Switch to light theme";
     }
     else {
         theme_toggle.title = "Switch to dark theme";
+        theme_toggle.ariaLabel = "Switch to dark theme";
     }
 }
