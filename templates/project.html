@@ -12,23 +12,6 @@
     {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
     {{- page.content | safe -}}
 
-    <h3>Tools &amp; Technologies</h3>
-    <div class="cat-list">
-        {%- for group in page.extra.tech_groups -%}
-        <div class="cat-list__category">
-
-            {%- if group.name | length > 0 -%}
-            <h4>{{ group.name }}</h4>
-            {%- endif -%}
-
-            <ul>
-                {%- for tech in group.techs -%}
-                <li>{{ tech }}</li>
-                {%- endfor -%}
-            </ul>
-        </div>
-        {%- endfor -%}
-    </div>
     {%- if page.extra.screenshots %}
     <h3>Screenshots</h3>
     {%- if page.extra.screenshot_aspect_ratio -%}
@@ -54,7 +37,25 @@
             </a>
         {%- endfor -%}
     </div>
-    {% endif %}
+    {%- endif -%}
+
+    <h3>Tools &amp; Technologies</h3>
+    <div class="cat-list">
+        {%- for group in page.extra.tech_groups -%}
+        <div class="cat-list__category">
+
+            {%- if group.name | length > 0 -%}
+            <h4>{{ group.name }}</h4>
+            {%- endif -%}
+
+            <ul>
+                {%- for tech in group.techs -%}
+                <li>{{ tech }}</li>
+                {%- endfor -%}
+            </ul>
+        </div>
+        {%- endfor -%}
+    </div>
 </section>
 <script>
     new Parvus({
