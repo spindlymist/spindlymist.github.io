@@ -16,6 +16,10 @@
         flex-direction: column;
         align-items: stretch;
     }
+
+    .project-links {
+        margin: var(--space-regular) 0 0 0;
+    }
 }
 .bit__thumbnail {
     position: relative;

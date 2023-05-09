@@ -23,8 +23,8 @@
             </div>
             <div>
                 <h3>{{ page.title }}</h3>
-                {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
                 {{- page.content | safe -}}
+                {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
             </div>
         </div>
     {%- endfor -%}

@@ -7,22 +7,20 @@
     </a>
     {%- else -%}
     <a class="is-disabled" aria-label="{{ live_url | trim_start_matches(pat='?') }}" role="tooltip" data-microtip-position="top">
-        <i class="fas fa-bolt"></i>
-        <span class="project-links__label">Try it</span>
         <i class="project-links__info far fa-question-circle fa-sm"></i>
+        <span class="project-links__label">Try it</span>
     </a>
     {%- endif -%}
 
     {%- if repo_url is not starting_with('?') -%}
     <a href="{{ repo_url }}" target="_blank">
         <i class="fas fa-code"></i>
-        <span class="project-links__label">Source</span>
+        <span class="project-links__label">View source</span>
     </a>
     {%- else -%}
     <a class="is-disabled" aria-label="{{ repo_url | trim_start_matches(pat='?') }}" role="tooltip" data-microtip-position="top">
-        <i class="fas fa-code"></i>
-        <span class="project-links__label">Source</span>
         <i class="project-links__info far fa-question-circle fa-sm" ></i>
+        <span class="project-links__label">View source</span>
     </a>
     {%- endif -%}
 </div>
