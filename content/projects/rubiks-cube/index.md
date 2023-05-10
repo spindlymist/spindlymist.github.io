@@ -22,6 +22,11 @@ techs = [
 
 A former coworker ([Michael](https://github.com/mikewr88)) and I once became mildly obsessed with the challenge of creating and animating a Rubik's cube using CSS (as opposed to, say, a 3D `<canvas>` like a sensible person would use). We filled several whiteboards with ideas about how it could be done. Eventually, we picked one of those ideas and I sat down and wrote the code. This is the result, which should be viewed not as a practical undertaking but as an exercise in mad science.
 
+See below for a detailed explanation of how it works.
+
+{{ project_screenshots() }}
+{{ project_technologies() }}
+
 ### How does it work?
 
 #### Drawing the cube

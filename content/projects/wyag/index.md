@@ -31,7 +31,9 @@ techs = [
 
 wyag (**W**rite **Y**ourself **a** **G**it) is a simplified clone of Git written in Rust. I wrote it to deepen my understanding of Git and to solidify and expand my knowledge of Rust after working through [the Rust book](https://doc.rust-lang.org/book/title-page.html). I started out following [a Python-based guide written by Thibault Polge](https://wyag.thb.lt/) (hence the name) but diverged considerably along the way—not least because Polge's guide is unfinished.
 
-Read on for a detailed account of wyag's features, limitations, and test methodology as well as my reflection on how the codebase could be improved.
+See below for a detailed account of wyag's features, limitations, and test methodology as well as my reflection on how the codebase could be improved.
+
+{{ project_technologies() }}
 
 ### Features
 

@@ -80,15 +80,6 @@ techs = [
     "Passport",
     "Data Sports Group API",
 ]
-
-[[extra.tech_groups]]
-name = "Tools"
-techs = [
-    "VS Code",
-    "Android Studio",
-    "Xcode",
-    "Git",
-]
 +++
 
 Fanalyze Winter Events was my capstone project at CSU Sacramento. I led a team that included 7 other students to develop a mobile application for a real world client, Fanalyze.
@@ -96,3 +87,6 @@ Fanalyze Winter Events was my capstone project at CSU Sacramento. I led a team t
 Ea non ut cillum id aliqua id ex ea ipsum ut laborum ex. Mollit id laboris irure qui occaecat enim ad elit aliqua voluptate exercitation cillum amet voluptate. Ad non pariatur esse elit sint Lorem labore ipsum amet aute aliquip. Eiusmod duis magna pariatur voluptate minim commodo esse aliquip cillum culpa in do incididunt pariatur. Cillum sit non excepteur labore fugiat.
 
 <iframe style="display:block;margin:auto" width="560" height="315" src="https://www.youtube.com/embed/XTOn3Fq8h-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+{{ project_screenshots() }}
+{{ project_technologies() }}

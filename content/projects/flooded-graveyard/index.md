@@ -55,6 +55,9 @@ During my penultimate semester at [CSU Sacramento](https://www.csus.edu/), I too
 
 While you could throw a scene like this together in under an hour with a modern game engine like Unity or Godot, this was an exercise in fundamentals—what it would take to *make* something like those engines' rendering subsystems. Nearly everything you see here, from the perspective, to the lighting, to the rippling, reflective surface of the water, was built up from bare mathematical principles. (I say "nearly" because OpenGL lends a helping hand with the interpolation of vertex attributes, texture sampling, and rasterization.) A list of the techniques I employed is given below.
 
+{{ project_screenshots() }}
+{{ project_technologies() }}
+
 ### Features
 
 - Perspective projection

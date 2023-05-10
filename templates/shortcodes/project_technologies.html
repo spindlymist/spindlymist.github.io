@@ -1,0 +1,19 @@
+{% if page.extra.tech_groups %}
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list">
+    {%- for group in page.extra.tech_groups -%}
+    <div class="cat-list__category">
+
+        {%- if group.name | length > 0 -%}
+        <h4>{{ group.name }}</h4>
+        {%- endif -%}
+
+        <ul>
+            {%- for tech in group.techs -%}
+            <li>{{ tech }}</li>
+            {%- endfor -%}
+        </ul>
+    </div>
+    {%- endfor -%}
+</div>
+{% endif %}

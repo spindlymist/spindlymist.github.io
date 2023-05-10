@@ -23,3 +23,6 @@ techs = [
 This is a simple cubic Bezier curve editor that I created while learning about the mathematics of such curves.
 
 The are more features I would like to add (e.g. splines), but the vanilla JS architecture is not the best suited for the increased complexity. If I were starting the project today, I would probably select a declarative/reactive framework like [Solid](https://www.solidjs.com/).
+
+{{ project_screenshots() }}
+{{ project_technologies() }}

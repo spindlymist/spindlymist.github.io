@@ -65,3 +65,6 @@ techs = [
 TacSense designs and manufactures miniaturized high-precision pressure sensors. In 2019, I was contracted to update and redesign parts of their website—primarily the [Products](https://web.archive.org/web/20200422021421/https://tacsense.com/products/) and [Applications](https://web.archive.org/web/20200422022127/https://tacsense.com/applications/) pages. The company has undergone tremendous growth and built a new website in the intervening years, but the work I did is still available via the [Internet Archive's Wayback Machine](https://archive.org/web/). The archived version is slow to load (likely waiting for a response from some service that no longer exists) but otherwise fully functional.
 
 The centerpiece of my contribution was a series of connected, animated figures and illustrations for the Products page. The client wished to emphasize that they were offering a complete solution from physical sensors to data analysis and everything between. I devised an \"animated trail\" (trademark pending—no, not really) that visually connects each layer of the tech stack as the user scrolls down the page, mimicking the flow of data through the actual system. There are screenshots below, but I recommend trying it yourself to see it come to life.
+
+{{ project_screenshots() }}
+{{ project_technologies() }}

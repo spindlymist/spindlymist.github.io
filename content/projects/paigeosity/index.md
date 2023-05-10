@@ -38,3 +38,6 @@ techs = [
 I designed and built this website for my friend, the consummate artist Paige McClurg, to replace an earlier site I built that was beginning to show its age. My primary goals were (1) to quickly funnel users to the page best suited to the purpose of their visit, (2) to highlight the artwork, and (3) to make updates as easy as possible for Paige.
 
 Although landing pages have somewhat fallen out of fashion, I opted for one here because it perfectly serves the first goal while providing an opportunity to display the art (and the artist) and establish the aesthetic tone. Throughout the rest of the site, the design is minimal and monochromatic to ensure nothing draws the visitor's attention away from the artwork (goal 2). I selected WordPress for the backend to address the third goal. Despite its technical quirks, it is still hard to find a CMS that offers a more polished end-user experience than WordPress.
+
+{{ project_screenshots() }}
+{{ project_technologies() }}
