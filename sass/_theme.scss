@@ -131,11 +131,20 @@ i {
     color: var(--color-accent);
 }
 
-code {
+code, pre {
     background-color: var(--background-inlay);
     padding: 2px;
     border-radius: var(--border-radius-tight);
     transition: background-color var(--transition-fast);
+}
+pre {
+    padding: var(--space-regular);
+
+    code {
+        background-color: transparent;
+        padding: 0;
+        border-radius: 0;
+    }
 }
 
 a:link, a:visited {
