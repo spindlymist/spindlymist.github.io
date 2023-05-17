@@ -1,6 +1,6 @@
 +++
 title = "Ray Tracing"
-weight = 3000
+weight = 2000
 
 [extra]
 live_url = "?Awaiting publication—see below."

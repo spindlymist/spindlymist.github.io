@@ -1,6 +1,6 @@
 +++
 title = "Flooded Graveyard"
-weight = 2000
+weight = 3000
 
 [extra]
 live_url = "https://github.com/spindlymist/flooded-graveyard/releases"
