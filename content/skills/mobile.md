@@ -8,8 +8,9 @@ icon = "fas fa-mobile-alt fa-lg"
 [[extra.groups]]
 name = ""
 skills = [
-    "React Native/Expo",
+    "React Native",
+    "Expo",
 ]
 +++
 
-Lorem fugiat minim qui elit cupidatat velit non. Magna laborum laboris duis consectetur in fugiat anim.
+At CSU Sacramento, I led an 8-student team in building [Fanalyze Winter Events](/projects/fanalyze), a cross-platform mobile app for following the Olympics.

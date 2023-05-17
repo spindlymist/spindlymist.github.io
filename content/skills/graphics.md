@@ -1,18 +1,19 @@
 +++
-title = "Graphics & Games"
+title = "Graphics & Gamedev"
 weight = 20
 
 [extra]
-icon = "fas fa-cube fa-lg"
+icon = "fas fa-cubes fa-lg"
 
 [[extra.groups]]
 name = ""
 skills = [
-    "Unity",
-    "Shaders",
     "OpenGL",
+    "Shaders (GLSL/HLSL)",
+    "Unity",
+    "Blender",
     "Lua",
 ]
 +++
 
-Lorem fugiat minim qui elit cupidatat velit non. Magna laborum laboris duis consectetur in fugiat anim.
+I studied 3D graphics theory and OpenGL at CSU Sacramento. As an instructor at Hackingtons, I helped students bring their game ideas to life in Unity.
