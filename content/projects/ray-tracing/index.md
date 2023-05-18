@@ -55,9 +55,9 @@ See below for more information about the techniques I studied and implemented fo
 
 ### Overview
 
-Typically, 3D graphics are rendered by applying a matrix transformation to project triangles in 3D space onto a 2D plane and then employing a rasterization algorithm to map them to pixels on the screen. Ray tracing is an alternative approach that works by simulating the path light takes through a scene—but in reverse, starting at the "camera." Generally speaking, the matrix projection method is faster and thus better suited to realtime applications, while ray tracing is capable of heightened realism, particularly when depicting reflective and/or transparent materials such as glass.
+Typically, 3D graphics are rendered by applying a matrix transformation that projects triangles in 3D space onto a 2D plane and then employing a rasterization algorithm that maps them to pixels on the screen. Ray tracing is an alternative approach that works by simulating the path light takes through a scene—but in reverse, starting at the "camera." Generally speaking, the matrix projection method is faster and thus better suited to realtime applications, while ray tracing is capable of heightened realism, particularly when depicting reflective and/or transparent materials such as glass.
 
-Phases/milestones: (1) triangles, (2) meshes, (3) bounding volume hierarchies.
+My work can be divided into three phases: (1) rendering of individual triangles, (2) rendering of simple meshes, and (3) rendering of complex meshes.
 
 ### Ray-Triangle Intersection and Vertex Attribute Interpolation
 
