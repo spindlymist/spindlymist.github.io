@@ -8,7 +8,7 @@ repo_url = "https://github.com/spindlymist/rubiks-cube"
 
 [[extra.screenshots]]
 file = "rubiks.png"
-alt = "A screenshot of a webpage featuring a depiction of a Rubik's cube. The cube is shown from a pseudo-isometric perspective and has been scrambled into a regular checkboard pattern, with one face blue and green, one red and orange, and one yellow and white. In the upper left corner, there are instructions for interacting with the cube. On the right side, there are 12 buttons for rotating each face clockwise and counterclockwise."
+alt = "A simplified depiction of a Rubik's cube with 3 visible faces. The cube has been scrambled into a regular checkboard pattern. There are buttons for rotating each face."
 caption = "The cube scrambled into a checkerboard pattern."
 
 [[extra.tech_groups]]

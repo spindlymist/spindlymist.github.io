@@ -8,7 +8,7 @@ repo_url = "https://github.com/spindlymist/cell-animation"
 
 [[extra.screenshots]]
 file = "grid-reveal.png"
-alt = "This image is split between two horizontal bands. The top third is a solid dark gray color. The bottom two-thirds is a photograph of a circuit board. In between are two rows of lime green rectangles. The upper row is solid on the right-hand side and gradually fades to the left. The bottom row is solid on the left-hand side and gradually fades to the right."
+alt = "A solid gray band partially obscures a photograph of a circuit board. The threshold is adorned by lime green rectangles of varying opacity."
 caption = "This configuration suggests a classic '90s hacking aesthetic."
 
 [[extra.tech_groups]]

@@ -8,12 +8,12 @@ repo_url = "https://github.com/spindlymist/millionaire-game"
 
 [[extra.screenshots]]
 file = "css_text_color.png"
-alt = "A screenshot of a web application with a boisterous color palette. Near the top, the question \"What CSS property changes the text color?\" is set in large type. Below it, four buttons supply potential answers: \"text-color\", \"font-color\", \"color\", and \"background-color\". The response \"color\" is selected and a tooltip beneath it asks \"Is that your final answer?\" The player's accumulated funds ($1000) are shown in the top right corner."
+alt = "The question \"What CSS property changes the text color?\" appears above four buttons with answers: \"text-color\", \"font-color\", \"color\", and \"background-color\". The third response is selected and an adjoining tooltip asks \"Is that your final answer?\""
 caption = "A perennial point of confusion for the kids."
 
 [[extra.screenshots]]
 file = "game_over.png"
-alt = "A screenshot of a web application with a boisterous color palette. Near the top, the words \"Game Over\" are set in large type. Beneath that it reads \"You earned $3000 this time!\" Beneath that is a highlighted button labeled \"Try Again\"."
+alt = "\"Game Over\" appears in large type above \"You earned $3000 this time!\" and a highlighted button labeled \"Try Again\"."
 caption = "Better luck next time!"
 
 [[extra.tech_groups]]

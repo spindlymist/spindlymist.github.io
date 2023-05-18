@@ -8,22 +8,22 @@ repo_url = "https://github.com/spindlymist/explosions"
 
 [[extra.screenshots]]
 file = "tame.png"
-alt = "A screenshot of a web application. Perhaps a few hundred cyan-colored circles of varying size are scattered somewhat haphazardly on a dark purple background. Here and there, particularly near the edges, groups of same-sized circles are arranged in distinct semicircular arcs."
+alt = "A haphazard scattering of hundreds of cyan circles. Some are arranged in semicircular arcs."
 caption = "A typical scene."
 
 [[extra.screenshots]]
 file = "options.png"
-alt = "A screenshot of a web application. A panel labeled \"Options\" is prominently displayed. Various parameters appear below: a checkbox labeled \"Auto-Spawn\"; 6 sliders labeled \"Spawn Rate\", \"Min Size\", \"Max Size\", \"Min Speed\", \"Max Speed\", and \"Explosion Particles\"; and, in another section labeled \"Color Randomization\", 2 checkboxes labeled \"On Spawn\" and \"On Explosion\". Below is a button labeled \"Close\". In the background, perhaps a few hundred bright orange-colored circles of varying size are scattered somewhat haphazardly on a rusty orange background. Here and there, particularly near the edges, groups of same-sized circles are arranged in distinct semicircular arcs."
+alt = "A panel labeled \"Options\" hosts various parameters: a checkbox labeled \"Auto-Spawn\"; 6 sliders labeled \"Spawn Rate\", \"Min Size\", \"Max Size\", \"Min Speed\", \"Max Speed\", and \"Explosion Particles\"; 2 colors labeled \"Background\" and \"Color\"; and, under the subheader \"Color Randomization\", 2 checkboxes labeled \"On Spawn\" and \"On Explosion\". Below is a button labeled \"Close\"."
 caption = "Tweak parameters to your heart's content."
 
 [[extra.screenshots]]
 file = "colorful.png"
-alt = "A screenshot of a web application. Hundreds of circles of varying size in a dizzying array of colors are scattered somewhat haphazardly on a nearly black background. Here and there, particularly near the edges, groups of same-sized circles are arranged in distinct semicircular arcs."
+alt = "A haphazard scattering of hundreds of circles in a dizzying array of colors. Some are arranged in semicircular arcs."
 caption = "This one goes out to all the fans of rainbow sprinkles."
 
 [[extra.screenshots]]
 file = "chaotic.png"
-alt = "Hundreds or thousands of pale green-colored circles of varying size are scattered somewhat haphazardly on a deep teal background. Notably, many of the circles are arranged in unevenly spaced bands parallel to the edges of the image, forming a pattern reminiscent of logarithmic graph paper. Clusters of half-cropped circles form a rough border around the image. Here and there, groups of same-sized circles are arranged in distinct semicircular arcs."
+alt = "A haphazard scattering of thousands of green circles. Some circles are arranged in unevenly spaced bands parallel to the edges, forming a pattern reminiscent of logarithmic graph paper."
 caption = "Banding patterns appear when the framerate drops. The simulation is discrete, so a long enough time step will cause many particles to become clamped to the edges of the canvas and thereafter move together as a line."
 
 [[extra.tech_groups]]

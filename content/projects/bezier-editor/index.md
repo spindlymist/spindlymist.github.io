@@ -8,7 +8,7 @@ repo_url = "https://github.com/spindlymist/bezier-editor"
 
 [[extra.screenshots]]
 file = "bezier.png"
-alt = "A screenshot of a web application. On the left side, a meandering curve appears in light gray against a white background. Part of the curve is highlighted in blue. Its endpoints are marked by open blue circles. Two additional open circles in red mark the curve's control points. To the right, a sidebar lists the curve segments, labeled \"Curve 1\" through \"Curve 6\". \"Curve 6\" is highlighted in blue. Below that are 4 buttons with the labels \"Delete\", \"Rename\", \"Clipboard\", and \"Follow\"."
+alt = "A meandering gray curve appears on a blank canvas. Part of the curve is blue with endpoints marked by open blue circles. Two open red circles mark the curve's control points. A sidebar lists 6 curve segments, the last of which is highlighted."
 caption = "Editing a pseudo-spline that I created by manually lining up 6 curves."
 
 [[extra.tech_groups]]
