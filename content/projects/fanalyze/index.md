@@ -10,52 +10,47 @@ screenshot_aspect_ratio = 0.5625
 [[extra.screenshots]]
 file = "welcome.png"
 alt = "welcome"
-caption = "Voluptate velit veniam do ex sint commodo eu mollit sit nostrud aliqua sunt. Velit consectetur occaecat deserunt labore Lorem ipsum. Deserunt adipisicing qui officia ullamco."
-
-[[extra.screenshots]]
-file = "home.png"
-alt = "home"
-caption = "home"
-
-[[extra.screenshots]]
-file = "home2.png"
-alt = "home2"
-caption = "home2"
-
-[[extra.screenshots]]
-file = "athlete_details1.png"
-alt = "athlete_details1"
-caption = "athlete_details1"
-
-[[extra.screenshots]]
-file = "compare_athletes.png"
-alt = "compare_athletes"
-caption = "compare_athletes"
-
-[[extra.screenshots]]
-file = "countries.png"
-alt = "countries"
-caption = "countries"
-
-[[extra.screenshots]]
-file = "country_details.png"
-alt = "country_details"
-caption = "country_details"
+caption = "The welcome screen. Users can register or log in using their Facebook, Google, or Apple account."
 
 [[extra.screenshots]]
 file = "edit_profile2.png"
 alt = "edit_profile2"
-caption = "edit_profile2"
+caption = "When a user creates an account, they build their profile by browsing popular countries, events, and athletes or searching for them. They can also adjust their notification preferences."
+
+[[extra.screenshots]]
+file = "home.png"
+alt = "home"
+caption = "The home screen provides key stats for the user's home country and recent results from the events they follow."
+
+[[extra.screenshots]]
+file = "home2.png"
+alt = "home2"
+caption = "The home screen also displays recent tweets from the user's national team."
+
+[[extra.screenshots]]
+file = "countries.png"
+alt = "countries"
+caption = "With the countries hub, users can quickly access their followed countries and browse or search for countries. Similar hubs exist for events and athletes."
+
+[[extra.screenshots]]
+file = "country_details.png"
+alt = "country_details"
+caption = "On the country details screen, the user can find a country's medal counts, recent results, upcoming events, and Twitter feed. They can also follow or unfollow the country."
+
+[[extra.screenshots]]
+file = "athlete_details1.png"
+alt = "athlete_details1"
+caption = "Similarly, the athlete details screen lists an athlete's medal counts, biographical details, recent/upcoming competitions, and Twitter feed. The user can follow the athlete or compare them with another athlete"
+
+[[extra.screenshots]]
+file = "compare_athletes.png"
+alt = "compare_athletes"
+caption = "A side-by-side comparison of two snowboarders' medal counts and best performances."
 
 [[extra.screenshots]]
 file = "event_details1.png"
 alt = "event_details1"
-caption = "event_details1"
-
-[[extra.screenshots]]
-file = "event_details2.png"
-alt = "event_details2"
-caption = "event_details2"
+caption = "Event groups make it easy to follow every event within a discipline. Users can further refine their profiles by unfollowing individual events in the group."
 
 [[extra.tech_groups]]
 name = "Frontend"
