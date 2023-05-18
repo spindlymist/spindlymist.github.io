@@ -9,32 +9,37 @@ repo_url = "?Awaiting publication—see below."
 [[extra.screenshots]]
 file = "triangles.png"
 alt = ""
-caption = ""
+caption = "The first step was to extend the renderer to support triangles. For this scene, I hand-positioned six textured triangles to form a pyramid beside a lone colored triangle."
 
 [[extra.screenshots]]
 file = "mesh.png"
 alt = ""
-caption = ""
+caption = "A scene with two simple meshes loaded from OBJ files: a colored, slightly refractive pyramid (6 triangles) and a textured, slightly reflective icosahedron (20 triangles)."
 
 [[extra.screenshots]]
 file = "dolphin.png"
 alt = ""
-caption = ""
+caption = "Render of a 32,976-triangle dolphin mesh. I used bounding volume hierarchies to render this complex model in a matter of seconds."
+
+[[extra.screenshots]]
+file = "dolphin_bvh.png"
+alt = ""
+caption = "A visualization of the bounding volume hierarchy generated for the dolphin mesh. I explain the technique near the bottom of this page."
 
 [[extra.screenshots]]
 file = "glass_dolphin.png"
 alt = ""
-caption = ""
+caption = "The dolphin model rendered with reflection and refraction enabled, giving the impression of glass."
 
 [[extra.screenshots]]
 file = "sphere_comparison.png"
 alt = ""
-caption = ""
+caption = "This comparison between a mathematically perfect sphere (left) and an 81,920-triangle icosphere approximation (right) suggests the result is accurate, though somewhat noisy. Sampling multiple rays per pixel would improve the appearance but take longer to render."
 
 [[extra.screenshots]]
 file = "final_scene.png"
 alt = ""
-caption = ""
+caption = "The renderer supports multiple BVH-accelerated meshes and mixed assortments of entities."
 
 [[extra.tech_groups]]
 name = ""
