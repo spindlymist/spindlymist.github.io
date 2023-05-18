@@ -82,12 +82,12 @@ a.gallery__item {
     }
 
     p {
+        z-index: 0;
         padding: 3px;
         margin: 0 var(--space-small);
         border-radius: var(--border-radius-tight);
-        background-color: rgba(var(--background-main-rgb), .9);
+        background-color: var(--background-main);
         color: var(--color-interactive);
-        backdrop-filter: blur(8px);
         transition:
             transform var(--transition-fast),
             background-color var(--transition-fast),
