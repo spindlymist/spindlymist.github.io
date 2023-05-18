@@ -16,4 +16,4 @@ skills = [
 ]
 +++
 
-CLI, GUI, server, embedded—if the problem can be solved by a CPU, I can make it happen. I have worked with most major languages and have a solid grasp on data structures, algorithms, design patterns, and development methodology.
+CLI, GUI, server, embedded—if the problem can be solved by a CPU, I can make it happen. I have worked with most major languages and have a solid grasp on data structures, algorithms, design patterns, and development methodologies.
