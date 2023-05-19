@@ -1,21 +1,32 @@
 {
-"origin": [
-    "probably #ing_activity#",
-    "likely #ing_activity#",
-    "definitely #ing_activity#",
-    "possibly #ing_activity#",
-    "might be #ing_activity#",
-    "last seen #ing_activity#",
-    "suspected of #ing_activity#"
+"origin": ["#prefix# #ing_activity#"],
+"prefix": [
+    "undoubtedly",
+    "definitely",
+    "probably",
+    "likely",
+    "possibly",
+    "might be",
+    "last seen",
+    "believed to be",
+    "reportedly",
+    "suspected of",
+    "accused of",
+    "allegedly",
+    "supposedly",
+    "considering"
 ],
 "ing_activity": [
-    "#making# #something#",
-    "learning a programming language",
-    "writing some code",
+    "#coding#",
     "#playing_music#",
     "#outdoors#",
     "#other_hobby#",
     "#consuming#"
+],
+"coding": [
+    "#making# #something#",
+    "learning a programming language",
+    "writing some code"
 ],
 "other_hobby": [
     "photographing #a_subject#",
@@ -55,8 +66,8 @@
 "somewhere": ["somewhere", "in the mountains", "in the woods", "within a deep forest", "in a distant land", "by a river", "by a lake", "on #an_obscure# trail"],
 "an_obscure": ["an obscure", "a forgotten", "a little-known", "an unknown"],
 "a_book": ["a book", "a novel", "something by #author#"],
-"author": ["Ursula K. LeGuin", "Bill Bryson", "Daniel Quinn", "Ursula Vernon", "H. P. Lovecraft"],
-"a_show": ["a horror movie", "a Ghibli movie", "a mind-bending movie", "Firefly", "Mushishi", "Cowboy Bebop", "a Sondheim musical"],
-"an_album": ["an album by #artist#", "a video game OST", "some indie rock", "some jazz", "some bluegrass", "some lo-fi"],
-"artist": ["Andy Shauf", "Fleet Foxes", "Local Natives", "The Decemberists", "Joy Kills Sorrow", "Chris Thile", "Saintseneca", "Frankie Cosmos", "Nataly Dawn", "Jacob Collier"]
+"author": ["Ursula K. LeGuin"],
+"a_show": ["a horror movie", "a Ghibli movie", "Firefly", "Mushishi", "Cowboy Bebop"],
+"an_album": ["an album by #artist#", "some jazz", "some bluegrass", "some lo-fi"],
+"artist": ["Andy Shauf", "Fleet Foxes", "Local Natives", "The Decemberists", "Joy Kills Sorrow", "Punch Brothers", "Saintseneca", "Frankie Cosmos", "Nataly Dawn", "Jacob Collier"]
 }
