@@ -1,6 +1,7 @@
 +++
 title = "Design"
 weight = 40
+draft = true
 
 [extra]
 icon = "fas fa-pencil-ruler fa-lg"
@@ -10,7 +11,6 @@ name = ""
 skills = [
     "Photoshop",
     "Inkscape",
-    "Adobe XD",
 ]
 +++
 

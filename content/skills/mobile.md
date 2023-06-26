@@ -1,6 +1,7 @@
 +++
 title = "Mobile"
 weight = 30
+draft = true
 
 [extra]
 icon = "fas fa-mobile-alt fa-lg"

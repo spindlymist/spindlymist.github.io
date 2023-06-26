@@ -1,19 +1,19 @@
 +++
-title = "Graphics & Gamedev"
+title = "Graphics & Design"
 weight = 20
 
 [extra]
-icon = "fas fa-cubes fa-lg"
+icon = "fas fa-pencil-ruler fa-lg"
 
 [[extra.groups]]
 name = ""
 skills = [
     "OpenGL",
-    "Shaders (GLSL/HLSL)",
+    "GLSL",
     "Unity",
-    "Blender",
-    "Lua",
+    "Photoshop",
+    "Inkscape",
 ]
 +++
 
-I studied 3D graphics theory and OpenGL at CSU Sacramento. As an instructor at Hackingtons, I helped students bring their game ideas to life in Unity.
+I have a strong aesthetic sense and care deeply that my work is beautiful as well as functional. I studied 3D graphics at CSU Sacramento, and as an instructor at Hackingtons I helped students bring their game ideas to life in Unity.

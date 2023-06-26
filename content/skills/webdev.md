@@ -17,10 +17,10 @@ skills = [
 [[extra.groups]]
 name = "Backend"
 skills = [
-    "SQL/Mongo",
-    "Node/Express",
-    "Python/Django",
-    "PHP/WordPress",
+    "SQL",
+    "Mongo",
+    "Express",
+    "Django",
 ]
 +++
 
