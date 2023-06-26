@@ -1,6 +1,6 @@
 +++
 title = "Knytt Stories Dialog"
-weight = 7500
+weight = 9500
 
 [extra]
 live_url = "?A demo level and manual will be out soon!"
