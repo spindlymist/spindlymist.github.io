@@ -154,7 +154,8 @@ a:link, a:visited {
     transition:
         background-color var(--transition-very-fast),
         color var(--transition-very-fast),
-        box-shadow var(--transition-very-fast);
+        box-shadow var(--transition-very-fast),
+        opacity var(--transition-very-fast);
 
     i {
         transition: color var(--transition-very-fast);
