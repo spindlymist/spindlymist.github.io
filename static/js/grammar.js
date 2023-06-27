@@ -60,11 +60,18 @@ function parse_definition(grammar, key_refs, spec, key) {
             })
             .filter(Boolean);
 
+        // Variants with lower indices are more likely to be chosen. After being used, a variant is moved to
+        // the end of the array, thus reducing repetition. Shuffling the array now creates an imaginary
+        // history that is not biased towards any of the variants.
+        shuffle(variants);
+
         // The generator function returns one variant at random each time it is called
         return function() {
-            const roll = Math.random();
-            const idx = Math.floor(roll * variants.length);
-            return variants[idx]();
+            const idx = pick_index_weighted_low(variants);
+            const result = variants[idx]();
+            move_element_to_end(variants, idx);
+
+            return result;
         };
     }
     else {
@@ -103,7 +110,7 @@ function parse_variant(grammar, key_refs, def) {
     return function() {
         return parts
             .map((part, i) => {
-                let isLiteral = i % 2 == 0;
+                const isLiteral = i % 2 == 0;
                 if(isLiteral) {
                     return part;
                 }
@@ -112,5 +119,28 @@ function parse_variant(grammar, key_refs, def) {
                 }
             })
             .join("");
+    }
+}
+
+// Picks a random index with bias towards lower indices.
+function pick_index_weighted_low(array) {
+    const roll1 = Math.floor(Math.random() * array.length);
+    const roll2 = Math.floor(Math.random() * array.length);
+    return Math.min(roll1, roll2);
+}
+
+// Moves the element at the given index to the end of the array.
+function move_element_to_end(array, idx) {
+    const elem = array.splice(idx, 1);
+    array.push(elem[0]);
+}
+
+// Randomly reorders the array.
+function shuffle(array) {
+    for (let i = 0; i < array.length; i++) {
+        const swap_index = Math.floor(Math.random() * (array.length - i)) + i;
+        const swap_elem = array[swap_index];
+        array[swap_index] = array[i];
+        array[i] = swap_elem;
     }
 }
