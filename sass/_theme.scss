@@ -133,6 +133,26 @@ nav.is-open .nav__button {
     &.is-open .modal-nav-content {
         opacity: 1;
     }
+
+    .nav__delayed {
+        display: flex;
+        flex-direction: column;
+        transform: translateX(calc(-1 * var(--space-large)));
+        opacity: 0;
+        transition-property: transform, opacity;
+        transition-duration: var(--transition-fast);
+    }
+    &.is-open .nav__delayed {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    $delay-step: .02;
+    @for $i from 1 to 10 {
+        .nav__delayed:nth-child(#{$i}) {
+            transition-delay: #{$delay-step * $i}s;
+        }
+    }
 }
 
 section {
