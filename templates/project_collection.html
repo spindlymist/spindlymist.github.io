@@ -7,7 +7,7 @@
 
 {%- block content -%}
 <section id="{{ section.title | slugify }}">
-    <h2 data-on-scroll="show">{{ section.title }}</h2>
+    <h2>{{ section.title }}</h2>
     {{- section.content | safe -}}
     {%- for page in section.pages -%}
         {%- set thumb_width = 512 -%}

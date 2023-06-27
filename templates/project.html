@@ -7,7 +7,7 @@
 
 {%- block content -%}
 <section id="{{ page.title | slugify }}">
-    <h2 data-on-scroll="show">{{ page.title }}</h2>
+    <h2>{{ page.title }}</h2>
     {{- macros::project_links(live_url = page.extra.live_url, repo_url = page.extra.repo_url) -}}
     {{- page.content | safe -}}
 </section>
