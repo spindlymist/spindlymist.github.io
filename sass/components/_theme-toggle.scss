@@ -1,5 +1,13 @@
-#theme-toggle {
+.theme-toggle {
     opacity: 0;
+
+    .light-only, .dark-only {
+        display: none;
+    }
+    &[data-theme=light] .light-only,
+    &[data-theme=dark] .dark-only {
+        display: initial;
+    }
 
     &.is-ready {
         opacity: 1;

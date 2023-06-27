@@ -28,7 +28,7 @@
         <nav>
             <div class="nav__mobile">
                 <h1>Robin O&apos;Connell</h1>
-                <button class="nav__toggle"><i class="fa fa-bars"></i></button>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
             </div>
             <div class="nav__links">
                 <div class="nav__link-group">
@@ -39,13 +39,33 @@
                 </div>
                 <div class="nav__link-group">
                     <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
-                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" id="contact-link"><i class="far fa-envelope"></i> contact</a>
-                    <a href="#!" id="theme-toggle"><i class="fas fa-sun"></i> theme</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
                 </div>
             </div>
         </nav>
         {% block content %}{% endblock content %}
     </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
     <script src="{{ get_url(path='js/ui.js') }}" type="module"></script>
     <script src="{{ get_url(path='js/background.js') }}"></script>
 </body>

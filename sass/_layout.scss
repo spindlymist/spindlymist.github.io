@@ -69,6 +69,43 @@ nav {
         column-gap: var(--space-regular);
     }
 }
+#modal-nav {
+    visibility: hidden;
+
+    &.is-open {
+        visibility: visible;
+    }
+
+    [role=dialog] {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 200;
+        
+    }
+
+    .modal-nav-header {
+        padding: var(--space-small) calc(var(--space-regular) + var(--space-large));
+
+        h2 {
+            visibility: hidden;
+            margin-bottom: 0;
+        }
+    }
+    .modal-nav-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        row-gap: var(--space-small);
+        flex: 1;
+        padding: 0 calc(var(--space-regular) + var(--space-large));
+    }
+}
 
 header, section {
     @include column-span-p($content-columns, $main-columns);
@@ -188,50 +225,22 @@ section:last-of-type {
         right: 0;
         padding-left: calc(var(--space-regular) + var(--space-large));
         padding-right: calc(var(--space-regular) + var(--space-large));
-        // top and bottom margin are moved onto .nav__mobile for easy height measurement
-        padding-top: 0;
-        padding-bottom: 0;
         margin: 0 calc(-1 * var(--space-regular));
 
         .nav__mobile {
             flex: 1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: var(--space-small);
-            padding-bottom: var(--space-small);
-
-            h1 {
-                margin-bottom: 0;
-            }
         }
         .nav__links {
             display: none;
         }
+    }
+    nav .nav__mobile, .modal-nav-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-        &.is-open {
-            flex-direction: column;
-            position: fixed;
-            bottom: 0;
-            margin: 0;
-            
-            .nav__mobile {
-                flex: 0;
-            }
-            .nav__links {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: stretch;
-                row-gap: var(--space-small);
-                flex: 1;
-            }
-            .nav__link-group {
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                row-gap: var(--space-small);
-            }
+        h1 {
+            margin-bottom: 0;
         }
     }
 

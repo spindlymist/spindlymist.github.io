@@ -49,10 +49,10 @@ h1 {
     font-size: var(--font-x-large);
     line-height: 1;
 }
-.nav__mobile {
+.nav__mobile, .modal-nav-header {
     font-size: var(--font-large);
 
-    h1 {
+    h1, h2 {
         font-size: inherit;
     }
 }

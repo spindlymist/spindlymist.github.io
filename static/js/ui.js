@@ -2,89 +2,63 @@
 // Email
 ////////////////////////////////////////////////////////////////////////////////
 
-const contact_link = document.querySelector("#contact-link");
-contact_link.href = "mailto:" + "nibor@su.llennoconibor"
-    .split('@')
-    .map(s => s.split('').reverse().join(''))
-    .join('@');
-contact_link.title = "";
+document.querySelectorAll("[data-mailto]").forEach(a => {
+    a.href = "mailto:" + a.dataset.mailto
+        .split('@')
+        .map(s => s.split('').reverse().join(''))
+        .join('@');
+    a.title = "";
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 // Navigation
 ////////////////////////////////////////////////////////////////////////////////
 
 const nav = document.querySelector("nav");
-const nav_toggle = nav.querySelector(".nav__toggle");
-const nav_mobile = nav.querySelector(".nav__mobile");
-let is_nav_open = false;
 
-const observer = new IntersectionObserver( 
+const nav_observer = new IntersectionObserver( 
     ([e]) => e.target.classList.toggle("is-stuck", e.intersectionRatio < 1),
     { threshold: [1], },
 );
-observer.observe(nav);
+nav_observer.observe(nav);
 
-nav.addEventListener("click", close_nav);
 window.addEventListener("resize", function() {
-    if (is_nav_open && window.innerWidth > 720) {
-        close_nav();
+    if (window.innerWidth > 720) {
+        window.MicroModal.close("modal-nav");
     }
 });
 
-nav_toggle.addEventListener("click", function(e) {
-    e.stopPropagation();
-    toggle_nav();
+window.MicroModal.init({
+    onShow: () => {
+        nav.classList.add("is-open")
+    },
+    onClose: () => {
+        nav.classList.remove("is-open");
+    },
 });
-
-function close_nav() {
-    is_nav_open = false;
-    nav.classList.remove("is-open");
-    update_body_spacing();
-}
-
-function toggle_nav() {
-    is_nav_open = !is_nav_open;
-    nav.classList.toggle("is-open", is_nav_open);
-    update_body_spacing();
-}
-
-function update_body_spacing() {
-    if (is_nav_open) {
-        const height = nav_mobile.offsetHeight + 2; // add 2px for border-bottom of nav
-        document.body.style.setProperty("--space-before", `${height}px`);
-    }
-    else {
-        document.body.style.setProperty("--space-before", 0);
-    }
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 // Theme
 ////////////////////////////////////////////////////////////////////////////////
 
-const theme_toggle = document.querySelector("#theme-toggle");
-const theme_icon = theme_toggle.querySelector("i");
+const theme_toggles = [...document.querySelectorAll(".theme-toggle")];
+update_theme_toggles();
+for (const theme_toggle of theme_toggles) {
+    theme_toggle.addEventListener("click", function(_) {
+        window.Theme.toggle();
+        update_theme_toggles();
+    });
+    theme_toggle.classList.add("is-ready");
+}
 
-update_theme_toggle();
-theme_toggle.addEventListener("click", function(e) {
-    e.stopPropagation();
-    window.Theme.toggle();
-    update_theme_toggle();
-});
-theme_toggle.classList.add("is-ready");
-
-function update_theme_toggle() {
+function update_theme_toggles() {
     const is_dark_theme = window.Theme.current === window.Theme.DARK;
-    theme_icon.classList.toggle("fa-sun", !is_dark_theme);
-    theme_icon.classList.toggle("fa-moon", is_dark_theme);  
+    const label = is_dark_theme ? "Switch to light theme" : "Switch to dark theme";
 
-    if (is_dark_theme) {
-        theme_toggle.title = "Switch to light theme";
-        theme_toggle.ariaLabel = "Switch to light theme";
-    }
-    else {
-        theme_toggle.title = "Switch to dark theme";
-        theme_toggle.ariaLabel = "Switch to dark theme";
+    for (const theme_toggle of theme_toggles) {
+        theme_toggle.title = label;
+        theme_toggle.ariaLabel = label;
+        theme_toggle.dataset.theme = window.Theme.current;
     }
 }
 
