@@ -7,10 +7,15 @@ const ctx = canvas.getContext('2d');
 
 const first_section = document.querySelector('main > section:first-of-type');
 const y_min = first_section.offsetTop / document.body.offsetHeight;
+const height = document.body.offsetHeight - first_section.offsetTop;
+const min_circle_count = 12;
+const max_circle_count = 36;
+const px_per_circle = 150;
+const count = clamp(Math.floor(height / px_per_circle), min_circle_count, max_circle_count);
 
 const circles = generate_circles({
-    count: 32,
-    seed: Date.now() % 512,
+    count,
+    seed: Date.now() % 256,
     colors: [
         { value: '#524a47', weight: 2 },
         { value: '#9fb9cf', weight: 2 },
@@ -18,8 +23,8 @@ const circles = generate_circles({
     ],
     fill_chance: .3333,
     parallax: {
-        mean: 0.6,
-        std_dev: .15,
+        mean: 1,
+        std_dev: 0,
     },
     boundary: {
         x_min: 0,
@@ -72,12 +77,12 @@ function generate_circles({
     for(let i = 0; i < count; i++) {
         const { x, y } = coord_sequence.next().value;
         circles.push({
-            p: Math.random(),
             x: x * x_range + x_min,
             y: y * y_range + y_min,
             parallax: Math.max(0, norm_sequence.next().value),
             color: pick_color(),
             filled: !(Math.random() > fill_chance),
+            theta_offset: Math.random() * 2 * Math.PI,
         });
     }
 
@@ -135,17 +140,30 @@ function draw_grid(canvas, ctx) {
 }
 
 function draw_circles(canvas, ctx) {
-    const p = window.scrollY / (document.body.offsetHeight - window.innerHeight);
-
     ctx.lineWidth = 2;
+
+    const visible_range = canvas.height / 1.5;
+    const max_radius = canvas.width / 12;
+    const waver_count = 1;
+    const waver_amplitude = 0;
+    const min_alpha = 0.1;
+
     for(let circle of circles) {
-        const delta = Math.abs(circle.p - p) * 2;
-        const r = Math.max(0, 1 - delta) * (canvas.width / 20)
+        const scrollY = window.scrollY * circle.parallax + window.innerHeight / 2;
+        const circleY = circle.y * document.body.offsetHeight;
+        const t = rescale(scrollY - circleY, -visible_range, visible_range, 0, 1);
+        if (t <= 0 || t >= 1) continue;
+        // const tt = (0.5 - Math.abs(t - 0.5)) * 2;
+        const theta = t * waver_count * 2 * Math.PI + circle.theta_offset;
+
+        const r = t * t * max_radius;
         const x = circle.x * canvas.width;
-        const y = (circle.y * document.body.offsetHeight) - (window.scrollY * circle.parallax);
-        
+        const y = circleY - window.scrollY * circle.parallax;
+        const deltaX = waver_amplitude * (1 - t) * Math.sin(theta);
+
         ctx.beginPath();
-        ctx.ellipse(x, y, r, r, 0, 0, 2*Math.PI);
+        ctx.ellipse(x + deltaX, y, r, r, 0, 0, 2 * Math.PI);
+        ctx.globalAlpha = Math.min(t + min_alpha, 1);
         if (circle.filled) {
             ctx.fillStyle = circle.color;
             ctx.fill();
@@ -155,6 +173,8 @@ function draw_circles(canvas, ctx) {
             ctx.stroke();
         }
     }
+
+    ctx.globalAlpha = 1;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -211,4 +231,12 @@ function* halton_coord_sequence(skip = 0, x_base = 2, y_base = 3) {
             y: y_sequence.next().value,
         };
     }
+}
+
+function rescale(t, old_min, old_max, new_min, new_max) {
+    return (t - old_min) / (old_max - old_min) * (new_max - new_min) + new_min;
+}
+
+function clamp(t, min, max) {
+    return Math.min(max, Math.max(min, t));
 }
