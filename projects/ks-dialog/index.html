@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Knytt Stories Dialog | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="knytt-stories-dialog">
+    <h2>Knytt Stories Dialog</h2><div class="project-links"><a class="is-disabled" aria-label="A demo level and manual will be out soon!" role="tooltip" data-microtip-position="top">
+        <i class="project-links__info far fa-question-circle fa-sm"></i>
+        <span class="project-links__label">Try it</span>
+    </a><a href="https:&#x2F;&#x2F;github.com&#x2F;spindlymist&#x2F;ks_dialog_system" target="_blank">
+        <i class="fas fa-code"></i>
+        <span class="project-links__label">View source</span>
+    </a></div><p>This project enables creators to add complex, interactive conversations to their Knytt Stories levels. It introduces a powerful format for writing branching dialog trees and a new, highly configurable UI for holding conversations.</p>
+<p>A little background: Knytt Stories is a minimalist platforming game created by <a href="https://twitter.com/nifflas">Swedish indie dev Nicklas Nygren</a> (better known as Nifflas). Released in 2007, it features an easy-to-use yet capable level editor which has spawned a dedicated community of creators and players.</p>
+<p>A number of mods have been created over the years with the primary goal of extending the editor's capabilities. This project was made possible by an <a href="https://grayface.github.io/ks/">ambitious mod called Knytt Stories Ex</a>, created by Sergey Rozhenko (GrayFace), which added support for Lua scripting.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery" style="--aspect-ratio:1.778"><a class="gallery__item lightbox" href="pass.png" data-caption="The player shares their feelings about a snowed-in mountain pass. Normally, they wouldn&#x27;t be able to respond to this character.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;pass.0ba2446c3a7e5802.webp" alt="Minimalist pixel art of two diminutive creatures near a low passage buried in snow. One is saying &quot;Sorry, Juni. The pass out of the valley completely snowed in last night.&quot; A menu gives two potential replies: &quot;Oh no!&quot; and &quot;That&#x27;s okay. I wasn&#x27;t going anywhere today, anyway.&quot; The latter is selected.">
+        </a><a class="gallery__item lightbox" href="favor.png" data-caption="The uppermost response only appears if the player has previously indicated that they live nearby. This character also tracks their disposition toward the player—determined by friendly or rude exchanges—and reacts accordingly.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;favor.8605ff3b95763f4d.webp" alt="Minimalist pixel art of two diminutive creatures in front of a home carved from a tree trunk. One is saying &quot;I&#x27;ve got a favor to ask of ya, actually.&quot; A menu gives three potential replies: &quot;Anything for my favorite neighbor&quot;, &quot;What can I do for you?&quot;, and &quot;Keep talking, old man.&quot; The first is selected.">
+        </a><a class="gallery__item lightbox" href="terminal.png" data-caption="Although designed primarily for dialog, the system works well for any sort of menu. Here, several parameters have been tweaked to give the impression of using a computer terminal.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;terminal.d042d04304b9c652.webp" alt="Minimalist pixel art of a diminutive creature in an abstract room with fluorescent lights. A prompt asks &quot;Where do you want to go?&quot;. A lime green-on-black menu gives 5 numbered responses and the option to cancel.">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>Knytt Stories Ex</li><li>Lua</li><li>Python</li></ul>
+    </div></div>
+</p>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>
