@@ -1,6 +1,7 @@
 +++
 title = "Bezier Editor"
 weight = 10000
+draft = true
 
 [extra]
 live_url = "https://spindlymist.github.io/bezier-editor/"

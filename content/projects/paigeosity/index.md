@@ -1,6 +1,6 @@
 +++
 title = "Paigeosity"
-weight = 7000
+weight = 2500
 
 [extra]
 live_url = "https://paigeosity.com/"

@@ -1,6 +1,6 @@
 +++
 title = "TacSense"
-weight = 6000
+weight = 1500
 
 [extra]
 live_url = "https://web.archive.org/web/20200422021421/https://tacsense.com/products/"
