@@ -51,7 +51,7 @@ techs = [
 ]
 +++
 
-During my final semester at [CSU Sacramento](https://www.csus.edu/), I undertook an independent project for [Dr. Scott Gordon](https://athena.ecs.csus.edu/~gordonvs/) concerning a 3D graphics technique called ray tracing. I extended the work of his former student—who had implemented ray tracing for geometric primitives like planes, spheres, and cubes—to accomodate arbitrary 3D models composed of tens of thousands of triangles. My work formed the basis of a new chapter in the 4th edition of Dr. Gordon's textbook, *[Computer Graphics Programming in OpenGL with C++](https://athena.ecs.csus.edu/~gordonvs/textC3E.html)* (Java edition forthcoming). Dr Gordon's texts have been used in 3D graphics courses at universities all around the US.
+During my final semester at [CSU Sacramento](https://www.csus.edu/), I undertook an independent project for [Dr. Scott Gordon](https://athena.ecs.csus.edu/~gordonvs/) concerning a 3D graphics technique called ray tracing. I extended the work of his former student—who had implemented ray tracing for geometric primitives like planes, spheres, and cubes—to accomodate arbitrary 3D models composed of tens of thousands of triangles. My work formed the basis of a new chapter in the 3rd edition of Dr. Gordon's textbook, *[Computer Graphics Programming in OpenGL with C++](https://athena.ecs.csus.edu/~gordonvs/textC3E.html)* (Java edition forthcoming). Dr Gordon's texts have been used in 3D graphics courses at universities all around the US.
 
 See below for more information about the techniques I studied and implemented for this project.
 
