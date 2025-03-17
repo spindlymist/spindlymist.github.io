@@ -1,5 +1,5 @@
 +++
-title = "Git in Rust"
+title = "Git Clone"
 weight = 4000
 
 [extra]
