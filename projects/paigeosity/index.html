@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Paigeosity | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="paigeosity">
+    <h2>Paigeosity</h2><div class="project-links"><a href="https:&#x2F;&#x2F;paigeosity.com&#x2F;" target="_blank">
+        <i class="fas fa-bolt"></i>
+        <span class="project-links__label">Try it</span>
+    </a></div><p>I designed and built this website for my friend, the consummate artist Paige McClurg, to replace an earlier site I built that was beginning to show its age. My primary goals were (1) to quickly funnel users to the page best suited to the purpose of their visit, (2) to highlight the artwork, and (3) to make updates as easy as possible for Paige.</p>
+<p>Although landing pages have somewhat fallen out of fashion, I opted for one here because it perfectly serves the first goal while providing an opportunity to display the art (and the artist) and establish the aesthetic tone. Throughout the rest of the site, the design is minimal and monochromatic to ensure nothing draws the visitor's attention away from the artwork (goal 2). I selected WordPress for the backend to address the third goal. Despite its technical quirks, it is still hard to find a CMS that offers a more polished end-user experience than WordPress.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery"><a class="gallery__item lightbox" href="home.png" data-caption="The homepage routes the user to one of the site&#x27;s three major sections. This is an interactive SVG illustration.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;home.c2b521bf040dbb76.webp" alt="The homepage. The Paigeosity logo appears next to three prominent hexagons with thick borders and eye-catching backdrops which are labelled &quot;gallery&quot;, &quot;paige&quot;, and &quot;shop&quot;.">
+        </a><a class="gallery__item lightbox" href="galleries.png" data-caption="The artist&#x27;s work is grouped into various collections accessible from the Gallery page.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;galleries.2af7ee239b0500a7.webp" alt="The index page for the artist&#x27;s collections. Each collection is a wide rectangular banner with title and brief description overlayed on a dimmed representative background image.">
+        </a><a class="gallery__item lightbox" href="gallery.png" data-caption="This page showcases the contents of one collection, Artem Vivus. Clicking a thumbnail opens a larger preview in a lightbox.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;gallery.8cf37a2adc8e4c83.webp" alt="The page for the artists&#x27;s &quot;Artem Vivus&quot; (&quot;Art of Living&quot;) collection. Square thumbnails are arrayed in a 3-column grid, each overlayed with the title of the work.">
+        </a><a class="gallery__item lightbox" href="commissions.png" data-caption="On the commercial commissions page, a simple figure highlights key information and supplies a call to action.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;commissions.66e5ef201a7d6aa6.webp" alt="A brief marketing pitch for the artist appears under the heading &quot;COMMERCIAL&quot;. Under the subheading &quot;RATES&quot;, a prominent row of 3 squares outline the rate and terms of payment and provide a contact link.">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>HTML&#x2F;CSS&#x2F;JS</li><li>PHP</li><li>WordPress</li></ul>
+    </div></div>
+</p>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>

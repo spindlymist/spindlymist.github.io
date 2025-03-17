@@ -1,0 +1,73 @@
+{
+"origin": ["#prefix# #ing_activity#"],
+"prefix": [
+    "undoubtedly",
+    "definitely",
+    "probably",
+    "likely",
+    "possibly",
+    "might be",
+    "last seen",
+    "believed to be",
+    "reportedly",
+    "suspected of",
+    "accused of",
+    "allegedly",
+    "supposedly",
+    "considering"
+],
+"ing_activity": [
+    "#coding#",
+    "#playing_music#",
+    "#outdoors#",
+    "#other_hobby#",
+    "#consuming#"
+],
+"coding": [
+    "#making# #something#",
+    "learning a programming language",
+    "writing some code"
+],
+"other_hobby": [
+    "photographing #a_subject#",
+    "drawing some pixel art",
+    "composing some music",
+    "studying Japanese",
+    "baking something indulgent",
+    "experimenting in the kitchen"
+],
+"outdoors": [
+    "hiking #somewhere#",
+    "backpacking #somewhere#",
+    "riding a bike #somewhere#",
+    "identifying #an_organism#"
+],
+"consuming": [
+    "watching #a_show#",
+    "playing #a_game#",
+    "reading #a_book#",
+    "listening to #an_album#",
+    "#consuming_liquid# #beverage#",
+    "#consuming_solid# #food#"
+],
+"playing_music": ["playing guitar", "playing violin", "playing mandolin", "playing piano", "playing ukulele", "singing"],
+"making": ["making", "creating", "designing", "prototyping"],
+"something": ["a website", "a game", "an app"],
+"beverage": ["a good cup of coffee", "a cappucino", "a nice cup of #tea#"],
+"an_organism": ["a flower", "a tree", "a mushroom"],
+"a_subject": ["a landscape", "a mushroom", "a flower", "an alluring alleyway"],
+"a_game": ["a Metroidvania", "a '90s JRPG", "a retro game", "an indie game", "a Nifflas game", "Knytt Stories", "Final Fantasy Tactics", "Breath of the Wild", "StarCraft", "Diablo 2", "Chrono Trigger", "Rain World", "Symphony of the Night"],
+"consuming_liquid": ["drinking", "enjoying", "savoring"],
+"consuming_solid": ["eating", "enjoying", "savoring"],
+"food": ["a slice of #sliced#", "#a_burrito# burrito", "some Indian curry", "an elaborate breakfast", "falafel"],
+"a_burrito": ["a breakfast", "an al pastor", "a mole"],
+"sliced": ["tiramisu", "strawberry rhubarb pie", "apple pie", "key lime pie"],
+"tea": ["tea", "houjicha", "oolong tea", "Earl Grey", "matcha"],
+"somewhere": ["somewhere", "in the mountains", "in the woods", "within a deep forest", "in a distant land", "by a river", "by a lake", "on #an_obscure# trail"],
+"an_obscure": ["an obscure", "a forgotten", "a little-known", "an unknown"],
+"a_book": ["a book", "a novel", "something by #author#"],
+"author": ["Ursula K. LeGuin"],
+"a_show": ["a horror movie", "a Ghibli movie", "Firefly", "Mushishi", "Cowboy Bebop"],
+"an_album": ["an album by #artist#", "some jazz", "some bluegrass", "some lo-fi"],
+"artist": ["Andy Shauf", "Fleet Foxes", "Local Natives", "The Decemberists", "Joy Kills Sorrow", "Punch Brothers", "Saintseneca", "Frankie Cosmos", "Nataly Dawn", "Jacob Collier"]
+}

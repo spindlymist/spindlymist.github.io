@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Flooded Graveyard | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="flooded-graveyard">
+    <h2>Flooded Graveyard</h2><div class="project-links"><a href="https:&#x2F;&#x2F;github.com&#x2F;spindlymist&#x2F;flooded-graveyard&#x2F;releases" target="_blank">
+        <i class="fas fa-bolt"></i>
+        <span class="project-links__label">Try it</span>
+    </a><a href="https:&#x2F;&#x2F;github.com&#x2F;spindlymist&#x2F;flooded-graveyard" target="_blank">
+        <i class="fas fa-code"></i>
+        <span class="project-links__label">View source</span>
+    </a></div><p>During my penultimate semester at <a href="https://www.csus.edu/">CSU Sacramento</a>, I took an advanced course in computer graphics (CSC 155) taught by the inimitable <a href="https://athena.ecs.csus.edu/~gordonvs/">Dr. Scott Gordon</a>. This was my final project for that course: an atmospheric 3D scene depicting a flooded graveyard on a cloudy, starlit night, populated with trees, grave markers, and a spooky ghost that drifts aimlessly in search of lost souls.</p>
+<p>While you could throw a scene like this together in under an hour with a modern game engine like Unity or Godot, this was an exercise in fundamentals—what it would take to <em>make</em> something like those engines' rendering subsystems. Nearly everything you see here, from the perspective, to the lighting, to the rippling, reflective surface of the water, was built up from bare mathematical principles. (I say "nearly" because OpenGL lends a helping hand with the interpolation of vertex attributes, texture sampling, and rasterization.) A list of the techniques I employed is given below.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery"><a class="gallery__item lightbox" href="scene.png" data-caption="The haunted graveyard.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;scene.8303169db9101b6c.webp" alt="A dim scene of scattered grave markers breaching the surface of standing water. A vague ghostlike figure hangs in the air next to a cross-shaped marble monument. A few fog-cloaked trees are silhouetted against the cloudy night sky and reflected in the water.">
+        </a><a class="gallery__item lightbox" href="underwater.png" data-caption="From another perspective, the view of the surface world is distorted by the water.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;underwater.10afc1d7817a716a.webp" alt="An underwater view of grave markers and tree roots. The tops of the markers and silhouettes of trees against a cloudy night sky appear distorted and blue-tinted beyond the surface of the water.">
+        </a><a class="gallery__item lightbox" href="normal_mapping.png" data-caption="Normal mapping makes the surface of the gravestone appear cracked and uneven. These are tricks of the light, not present in the geometry.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;normal_mapping.cb7e87a5fdcdee86.webp" alt="Two images of a gravestone with an uneven, cracked surface. The first is lit from above left, indicated by a yellow square. In the second, the light is lower and to the right.">
+        </a><a class="gallery__item lightbox" href="shadows.png" data-caption="The point light casts shadows in all directions.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;shadows.45dd647fd777cb96.webp" alt="A ring of gravestones viewed from a top-down perspective. Shadows radiate outward like spokes, cast by a central light indicated by a yellow square.">
+        </a><a class="gallery__item lightbox" href="fresnel.png" data-caption="The Fresnel effect at work. At oblique viewing angles, the reflection of the sky and trees dominates. Viewed straight on, the refracted view of the ground beneath takes over.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;fresnel.4350aa99b2e4bad4.webp" alt="The surface of the water viewed at an angle. Near the top—farther from the viewer—the water reflects the sky and trees. Near the bottom—closer to the viewer—a grassy expanse shows through.">
+        </a><a class="gallery__item lightbox" href="transparency.png" data-caption="Close-ups of the cutout foliage (left) and alpha-blended ghost (right).">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;transparency.7dbb5ed45c2a5c6f.webp" alt="This image is split in two. On the left is cedar-like foliage. The dark background peeks through gaps and outlines the complex perimeter of individual needles. On the right, the graveyard is obscured by semi-opaque fabric which seems to be draped over an unseen figure.">
+        </a><a class="gallery__item lightbox" href="marble.png" data-caption="3D marble texture generated with Perlin noise. Every execution yields a unique texture.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;marble.e8ad15a108f7e52b.webp" alt="Close-up of the base of the cross-shaped marble monument. The contiguous nature of its smoky black-and-white texture suggests that it was carved from a single block of stone.">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>Java</li><li>OpenGL&#x2F;JOGL</li><li>GLSL</li><li>JOML</li></ul>
+    </div></div>
+</p>
+<h3 id="features">Features</h3>
+<ul>
+<li>Perspective projection</li>
+<li>Blinn-Phong lighting (single point light)</li>
+<li>Normal mapping</li>
+<li>Omnidirectional shadows</li>
+<li>Skybox</li>
+<li>Fog</li>
+<li>Water with
+<ul>
+<li>Animated waves</li>
+<li>Reflection, refraction, and Fresnel effect</li>
+</ul>
+</li>
+<li>.obj model importer with
+<ul>
+<li>partial .mtl support</li>
+<li>multiple textures per model</li>
+<li>automatic tangent calculation</li>
+</ul>
+</li>
+<li>Cutouts/alpha blending</li>
+<li>3D Perlin noise texture (marble)</li>
+<li>Camera controller</li>
+</ul>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>

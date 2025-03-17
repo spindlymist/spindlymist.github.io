@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Ray Tracing | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="ray-tracing">
+    <h2>Ray Tracing</h2><div class="project-links"></div><p>During my final semester at <a href="https://www.csus.edu/">CSU Sacramento</a>, I undertook an independent project for <a href="https://athena.ecs.csus.edu/~gordonvs/">Dr. Scott Gordon</a> concerning a 3D graphics technique called ray tracing. I extended the work of his former student—who had implemented ray tracing for geometric primitives like planes, spheres, and cubes—to accomodate arbitrary 3D models composed of tens of thousands of triangles. My work formed the basis of a new chapter in the 3rd edition of Dr. Gordon's textbook, <em><a href="https://athena.ecs.csus.edu/~gordonvs/textC3E.html">Computer Graphics Programming in OpenGL with C++</a></em> (Java edition forthcoming). Dr Gordon's texts have been used in 3D graphics courses at universities all around the US.</p>
+<p>See below for more information about the techniques I studied and implemented for this project.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery"><a class="gallery__item lightbox" href="triangles.png" data-caption="The first step was to extend the renderer to support triangles. For this scene, I hand-positioned six textured triangles to form a pyramid beside a lone colored triangle.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;triangles.77e08323fdc5ff5c.webp" alt="">
+        </a><a class="gallery__item lightbox" href="mesh.png" data-caption="A scene with two simple meshes loaded from OBJ files: a colored, slightly refractive pyramid (6 triangles) and a textured, slightly reflective icosahedron (20 triangles).">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;mesh.472f44ccf06f114a.webp" alt="">
+        </a><a class="gallery__item lightbox" href="dolphin.png" data-caption="Render of a 32,976-triangle dolphin mesh. I used bounding volume hierarchies to render this complex model in a matter of seconds.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;dolphin.94a34a31aff6ad8d.webp" alt="">
+        </a><a class="gallery__item lightbox" href="dolphin_bvh.png" data-caption="A visualization of the bounding volume hierarchy generated for the dolphin mesh. I explain the technique near the bottom of this page.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;dolphin_bvh.44d012275e1d6cec.webp" alt="">
+        </a><a class="gallery__item lightbox" href="glass_dolphin.png" data-caption="The dolphin model rendered with reflection and refraction enabled, giving the impression of glass.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;glass_dolphin.c4c29b0d18d12d8b.webp" alt="">
+        </a><a class="gallery__item lightbox" href="sphere_comparison.png" data-caption="This comparison between a mathematically perfect sphere (left) and an 81,920-triangle icosphere approximation (right) suggests the result is accurate, though somewhat noisy. Sampling multiple rays per pixel would improve the appearance but take longer to render.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;sphere_comparison.e62a8dc42befc5a0.webp" alt="">
+        </a><a class="gallery__item lightbox" href="final_scene.png" data-caption="The renderer supports multiple BVH-accelerated meshes and mixed assortments of entities.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;final_scene.77ddf152b2c36b78.webp" alt="">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>Java</li><li>OpenGL&#x2F;JOGL</li><li>GLSL</li><li>JOML</li></ul>
+    </div></div>
+</p>
+<h3 id="overview">Overview</h3>
+<p>Typically, 3D graphics are rendered by applying a matrix transformation that projects triangles in 3D space onto a 2D plane and then employing a rasterization algorithm that maps them to pixels on the screen. Ray tracing is an alternative approach that works by simulating the path light takes through a scene—but in reverse, starting at the "camera." Generally speaking, the matrix projection method is faster and thus better suited to realtime applications, while ray tracing is capable of heightened realism, particularly when depicting reflective and/or transparent materials such as glass.</p>
+<p>My work can be divided into three phases: (1) rendering of individual triangles, (2) rendering of simple meshes, and (3) rendering of complex meshes.</p>
+<h3 id="ray-triangle-intersection-and-vertex-attribute-interpolation">Ray-Triangle Intersection and Vertex Attribute Interpolation</h3>
+<p>The essential strategy in ray tracing is determining where rays of light and objects in the scene intersect. Thus, my work began with implementing ray-triangle intersection. There are many approaches to this problem; I selected the well-known Möller–Trumbore algorithm for its performance and relative simplicity.</p>
+<p>Knowing the point of intersection is only half the battle. For texturing, lighting, reflections, and refractive materials, I also needed the normal vector and texture coordinates at that point. Conveniently, the Möller–Trumbore algorithm outputs barycentric coordinates, which are expressed as a weighted average of the triangle's vertices. Hence, I could calculate the desired properties by multiplying these weights by the normals and texture coords specified for each vertex.</p>
+<h3 id="mesh-serialization-and-ray-mesh-intersection">Mesh Serialization and Ray-Mesh Intersection</h3>
+<p>Once I could render triangles, I turned my attention to meshes. A mesh is a set of triangles (or quads) that define the surface of a 3D object. To start, I needed a way of copying the mesh data into VRAM. I packed the data for all the meshes in the scene into three long <code>float</code> arrays—one for vertex positions, one for normals, one for texture coords—and recorded the starting index and length of each model's data. Then, I placed the arrays into SSBOs (shader storage buffer objects), which are designed for transferring large amounts of data to the GPU. On the shader side, I could reference the starting index/length to create an instance of the model in the scene.</p>
+<p>To test if a ray and mesh intersected, I would iterate over every triangle in the mesh and apply the algorithm from the previous section. In this manner, I was able to render simple models of up to a few hundred triangles. However, note that the cost of each ray-mesh intersection grows linearly. Furthermore, the time taken to render scenes with transparent or reflective objects grows tremendously fast—roughly O(n<sup>k</sup>) for n triangles and recursive depth k. I needed a better method to render complex objects within a reasonable timeframe.</p>
+<h3 id="bounding-volume-hierarchies">Bounding Volume Hierarchies</h3>
+<p>I optimized ray-mesh intersection by employing a data structure known as a bounding volume hierarchy (BVH). A BVH is a tree in which each leaf node corresponds to 1 or more triangles (or other primitives) in a mesh (or scene). Each internal node is associated with a volume (such as a cube) that contains every primitive in that subtree—hence <em>bounding</em> volume. The root node's bounding volume encompasses the entire object.</p>
+<p>For example, a very simple BVH for a humanoid mesh might have 6 leaves: head, torso, left arm, right arm, left leg, right leg. The next layer up in the tree could have two nodes: upper body (head/torso/arms) and lower body (legs). Finally, the root node would encompass the whole body.</p>
+<p>To test if a ray and mesh intersect using a BVH, start at the root node and work your way down. For each node, you only need to check its children if the ray intersects the bounding volume. If they don't intersect, you've ruled out the entire subtree with potentially vast numbers of triangles. Thus, with a well-constructed BVH, ray-mesh intersection can be reduced from linear to logarithmic time—a massive improvement when working with poly counts in the tens or hundreds of thousands.</p>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Rubik&#x27;s Cube | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="rubik-s-cube">
+    <h2>Rubik&#x27;s Cube</h2><div class="project-links"><a href="https:&#x2F;&#x2F;spindlymist.github.io&#x2F;rubiks-cube&#x2F;" target="_blank">
+        <i class="fas fa-bolt"></i>
+        <span class="project-links__label">Try it</span>
+    </a><a href="https:&#x2F;&#x2F;github.com&#x2F;spindlymist&#x2F;rubiks-cube" target="_blank">
+        <i class="fas fa-code"></i>
+        <span class="project-links__label">View source</span>
+    </a></div><p>A former coworker (<a href="https://github.com/mikewr88">Michael</a>) and I once became mildly obsessed with the challenge of creating and animating a Rubik's cube using CSS (as opposed to, say, a 3D <code>&lt;canvas&gt;</code> like a sensible person would use). We filled several whiteboards with ideas about how it could be done. Eventually, we picked one of those ideas and I sat down and wrote the code. This is the result, which should be viewed not as a practical undertaking but as an exercise in mad science.</p>
+<p>See below for a detailed explanation of how it works.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery"><a class="gallery__item lightbox" href="rubiks.png" data-caption="The cube scrambled into a checkerboard pattern.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;rubiks.577f79f16fd14152.webp" alt="A simplified depiction of a Rubik&#x27;s cube with 3 visible faces. The cube has been scrambled into a regular checkboard pattern. There are buttons for rotating each face.">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>HTML</li><li>CSS&#x2F;SASS</li><li>JavaScript</li></ul>
+    </div></div>
+</p>
+<h3 id="how-does-it-work">How does it work?</h3>
+<h4 id="drawing-the-cube">Drawing the cube</h4>
+<p>First, the cube is divided into 26 smaller "cubelets" (that's 3<sup>3</sup> - 1 since there is no center cubelet). Each cubelet has 1 face (center), 2 faces (edge), or 3 faces (corner). In HTML terms, a cubelet is a <code>&lt;div&gt;</code> and each face is a <code>&lt;div&gt;</code> nested within. The cubelet is responsible for its position relative to the whole cube while the faces take care of their position and rotation relative to the cubelet.</p>
+<blockquote>
+<p>⚠️ Note that <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style"><code>transform-style: preserve-3d</code></a> is required for this to work. Without it, instead of the child elements' transforms being composed with those of their parent in 3D space (as you would likely expect), the whole parent element is first rendered to a 2D plane and then its transforms are applied to that <em>plane</em>.</p>
+</blockquote>
+<p>The center of the cube is defined as the point (0, 0, 0). The positive X, Y, and Z axes are taken to point toward the right, top, and front faces of the cube, respectively. (Note that this means the Y axis will be flipped in the CSS.) Cubelets are positioned at -1, 0, and 1 along each axis. A class is created for each position: <code>pos_-1_-1_-1</code>, <code>pos_-1_-1_0</code>, <code>pos_-1_-1_1</code>, and so on up to <code>pos_1_1_1</code> which applies the appropriate <code>translate3d</code>. For ease, the classes are generated with SASS, and the cubelets are generated with JavaScript, though this isn't necessary.</p>
+<p>Each cubelet face has one class that defines its color (<code>.white</code>, <code>.orange</code>, <code>.blue</code>, etc.) and one that defines its local position and rotation (<code>.top</code>, <code>.front</code>, <code>.left</code>, etc.). Each class in the latter group starts with <code>translateX(-50%) translateY(-50%)</code> to center the face on the parent cubelet, which has 0 width and 0 height. This is followed by the particular transformations for that face. For example, a front face requires no rotation, just a translation along the positive Z axis for half the side length of the cubelet. A left face requires a half-side-length translation along the negative X axis and a -90 degree rotation around the Y axis. (In practice, I preferred to rotate first and <em>always</em> apply the translation along the new positive Z axis).</p>
+<h4 id="animating-a-rotation">Animating a rotation</h4>
+<p>A rotation ostensibly alters the position and local rotation of 9 cubelets. The 9 cubelets that comprise the rotating face are grouped into a <code>&lt;div&gt;</code> which is then <code>rotate()</code>ed 90 degrees on the relevant axis. A CSS transition handles the actual animation.</p>
+<p>However, this is only done for visual purposes. The next rotation may affect a subset of those 9 cubelets, and moving them from the first rotation's <code>&lt;div&gt;</code> to a new <code>&lt;div&gt;</code> would undo the first rotation. Rather, the effects of the first rotation must be permanently applied to the cubelets.</p>
+<h4 id="persisting-rotations">Persisting rotations</h4>
+<p>If one was being practical, one would probably store the X, Y, and Z rotations of each cubelet as CSS variables and employ some matrix multiplication to update them after each rotation. However, I contend that this would not be as fun as the approach taken in this project. Our key insight was that the same end state can be achieved by instead rearranging the colored stickers on each face.</p>
+<p>At this point, the rotation <code>&lt;div&gt;</code> is deleted and the faces of each affected cubelet are regenerated according to the previous state of the cube and the rotation applied. Note that the actual position and rotation of each cubelet are fixed! In practice, this part requires JavaScript and occurs in four steps:</p>
+<ol>
+<li><strong>Grouping</strong>: The cubelets that comprise the rotating face must be gathered together. This is done ahead of time by placing them into 6 non-mutually exclusive arrays (one for each face) as they are created.</li>
+<li><strong>Local rotation</strong>: Iterating over the affected cubelets, each cubelet's faces (or stickers) are possibly assigned to different sides of the cube. For instance, consider the top center cubelet as you rotate the front face of the cube counterclockwise. The front-facing sticker remains on the front face, while the top-facing sticker ends up on the left face. All possible transformations are encoded in a map which acts as a function f : (start face, rotation) → end face.</li>
+<li><strong>Translation</strong>: Each cubelet's transformed stickers are placed into a 3-dimensional array at the indices corresponding to what its new position would be in a physical model. The new position is calculated by applying a rotation matrix to the cubelet's actual, fixed position. (We didn't escape matrix multiplication after all.)</li>
+<li><strong>Rendering</strong>: Finally, each cubelet replaces its actual stickers in the DOM with those stored at its position in the 3D array.</li>
+</ol>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>

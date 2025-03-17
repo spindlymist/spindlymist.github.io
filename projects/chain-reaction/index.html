@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://robinoconnell.us/js/theme.js"></script>
+    <script src="https://robinoconnell.us/lib/parvus.min.js"></script>
+    <link href="https://robinoconnell.us/lib/parvus.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://robinoconnell.us/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/fd239d80d7.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/microtip/microtip.css" rel="stylesheet">
+    <title>Chain Reaction | Robin O&apos;Connell</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <canvas></canvas>
+    <main>
+        <header>
+            <h1>Robin O&apos;Connell</h1>
+            <p id="tagline-container" data-anim-state="idle">
+                <span id="tagline">&nbsp;<button aria-label="Regenerate tagline" title="Regenerate tagline"><i class="fa fa-redo"></i></button></span>
+                <span id="old-tagline" aria-hidden>&nbsp;<button disabled><i class="fa fa-redo"></i></button></span>
+            </p>
+        </header>
+        <nav>
+            <div class="nav__mobile">
+                <h1>Robin O&apos;Connell</h1>
+                <button title="Open navigation" aria-label="Open navigation" class="nav__button" data-micromodal-trigger="modal-nav"><i class="fa fa-bars"></i></button>
+            </div>
+            <div class="nav__links">
+                <div class="nav__link-group">
+                    <a href="/">home</a>
+                    <a href="/#projects">projects</a>
+                    <a href="/#skills">skills</a>
+                    <a href="/#about">about</a>
+                </div>
+                <div class="nav__link-group">
+                    <a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a>
+                    <a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a>
+                    <a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a>
+                </div>
+            </div>
+        </nav>
+        <section id="chain-reaction">
+    <h2>Chain Reaction</h2><div class="project-links"><a href="https:&#x2F;&#x2F;spindlymist.github.io&#x2F;explosions&#x2F;" target="_blank">
+        <i class="fas fa-bolt"></i>
+        <span class="project-links__label">Try it</span>
+    </a><a href="https:&#x2F;&#x2F;github.com&#x2F;spindlymist&#x2F;explosions" target="_blank">
+        <i class="fas fa-code"></i>
+        <span class="project-links__label">View source</span>
+    </a></div><p>This is a pointless, yet fun simulation to play around with. Hold the left mouse button down to spawn particles with randomized radius and velocity. When a particle collides with the edge of the window, it will explode in an arc of smaller particles which are reflected back onto the page—each of which will eventually explode into even smaller particles, and so on, until they reach a minimum size.</p>
+<p>Right click to tweak various parameters. Beware that if you spawn a lot of particles, the framerate will drop to a crawl and your fans will probably kick into overdrive. The "Explosion Particles" parameter, which controls how many smaller particles are spawned when a particle explodes, is particularly devious.</p>
+<p>
+<h3>Screenshots</h3><div class="gallery"><a class="gallery__item lightbox" href="tame.png" data-caption="A typical scene.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;tame.e8b816fad67231fd.webp" alt="A haphazard scattering of hundreds of cyan circles. Some are arranged in semicircular arcs.">
+        </a><a class="gallery__item lightbox" href="options.png" data-caption="Tweak parameters to your heart&#x27;s content.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;options.149725a4b8959eb4.webp" alt="A panel labeled &quot;Options&quot; hosts various parameters: a checkbox labeled &quot;Auto-Spawn&quot;; 6 sliders labeled &quot;Spawn Rate&quot;, &quot;Min Size&quot;, &quot;Max Size&quot;, &quot;Min Speed&quot;, &quot;Max Speed&quot;, and &quot;Explosion Particles&quot;; 2 colors labeled &quot;Background&quot; and &quot;Color&quot;; and, under the subheader &quot;Color Randomization&quot;, 2 checkboxes labeled &quot;On Spawn&quot; and &quot;On Explosion&quot;. Below is a button labeled &quot;Close&quot;.">
+        </a><a class="gallery__item lightbox" href="colorful.png" data-caption="This one goes out to all the fans of rainbow sprinkles.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;colorful.3cf8203050394d57.webp" alt="A haphazard scattering of hundreds of circles in a dizzying array of colors. Some are arranged in semicircular arcs.">
+        </a><a class="gallery__item lightbox" href="chaotic.png" data-caption="Banding patterns appear when the framerate drops. The simulation is discrete, so a long enough time step will cause many particles to become clamped to the edges of the canvas and thereafter move together as a line.">
+            <img src="https:&#x2F;&#x2F;robinoconnell.us&#x2F;processed_images&#x2F;chaotic.ef4eb9d68b06968e.webp" alt="A haphazard scattering of thousands of green circles. Some circles are arranged in unevenly spaced bands parallel to the edges, forming a pattern reminiscent of logarithmic graph paper.">
+        </a></div>
+<script>
+    new Parvus({
+        gallerySelector: '.gallery',
+    });
+</script>
+
+<h3>Tools &amp; Technologies</h3>
+<div class="cat-list"><div class="cat-list__category"><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul>
+    </div></div>
+</p>
+</section>
+    </main>
+    <div id="modal-nav" aria-hidden="true">
+        <div tabindex="-1">
+            <div role="dialog" aria-modal="true" aria-labelledby="modal-nav-title">
+                <div class="modal-nav-header">
+                    <h2 id="modal-nav-title">Navigation</h2>
+                    <button class="nav__button" title="Close navigation" aria-label="Close navigation" data-micromodal-close><i class="fa fa-times"></i></button>
+                </div>
+                <div class="modal-nav-content">
+                    <div class="nav__delayed"><a href="/">home</a></div>
+                    <div class="nav__delayed"><a href="/#projects">projects</a></div>
+                    <div class="nav__delayed"><a href="/#skills">skills</a></div>
+                    <div class="nav__delayed"><a href="/#about">about</a></div>
+                    <div class="nav__delayed"><a href="https://github.com/spindlymist/" target="_blank"><i class="fab fa-github"></i> github</a></div>
+                    <div class="nav__delayed"><a href="#please-enable-javascript" title="Please enable JavaScript to see email address" data-mailto="nibor@su.llennoconibor"><i class="far fa-envelope"></i> contact</a></div>
+                    <div class="nav__delayed"><a href="#!" class="theme-toggle" data-theme="light"><i class="fas fa-sun light-only"></i><i class="fas fa-moon dark-only"></i> theme</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+    <script src="https://robinoconnell.us/js/ui.js" type="module"></script>
+    <script src="https://robinoconnell.us/js/background.js"></script>
+</body>
+</html>
